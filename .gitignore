@@ -16,4 +16,4 @@
 !/log/.keep
 */tmp
 /fullstack*
-.DS_Store
+*.DS_Store
