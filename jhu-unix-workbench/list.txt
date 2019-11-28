@@ -1,0 +1,16 @@
+total 40
+drwxr-xr-x  15 admin  staff    480 Nov 13 17:27 .
+drwxr-xr-x+ 28 admin  staff    896 Nov  9 16:17 ..
+-rw-r--r--@  1 admin  staff  12292 Nov 12 13:44 .DS_Store
+drwxr-xr-x   4 admin  staff    128 Nov 12 12:24 Course 1
+drwxr-xr-x@  7 admin  staff    224 Nov 12 12:20 Course 2
+drwxr-xr-x  22 admin  staff    704 Oct 16 17:46 fullstack-course1-module2
+drwxr-xr-x  23 admin  staff    736 Nov  1 19:43 fullstack-course1-module3
+drwxr-xr-x   7 admin  staff    224 Nov  1 19:40 fullstack-course1-module3-blackbox-testing
+drwxr-xr-x  19 admin  staff    608 Oct 26 14:45 fullstack-course2-module1-fancy_cars
+drwxr-xr-x@ 18 admin  staff    576 Aug 20 22:05 fullstack-course2-module2-advanced-ar-master
+drwxr-xr-x@ 18 admin  staff    576 Aug 20 22:10 fullstack-course2-module3-blogposts-master
+drwxr-xr-x@ 21 admin  staff    672 Nov 12 13:06 fullstack-course2-module4-i-reviewed-master
+-rw-r--r--   1 admin  staff      0 Nov 13 17:27 list.txt
+-rw-r--r--   1 admin  staff      6 Nov 13 17:27 readme.txt
+drwxr-xr-x   2 admin  staff     64 Nov 13 17:26 workbench

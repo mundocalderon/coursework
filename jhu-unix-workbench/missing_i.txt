@@ -1,0 +1,22 @@
+1:Alabama
+2:Alaska
+4:Arkansas
+6:Colorado
+8:Delaware
+16:Kansas
+17:Kentucky
+20:Maryland
+21:Massachusetts
+26:Montana
+27:Nebraska
+28:Nevada
+30:New Jersey
+32:New York
+34:North Dakota
+36:Oklahoma
+37:Oregon
+41:South Dakota
+42:Tennessee
+43:Texas
+44:Utah
+45:Vermont

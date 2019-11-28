@@ -1,0 +1,23 @@
+1:Alabama
+2:Alaska
+4:Arkansas
+8:Delaware
+11:Hawaii
+14:Indiana
+16:Kansas
+17:Kentucky
+19:Maine
+20:Maryland
+21:Massachusetts
+22:Michigan
+24:Mississippi
+27:Nebraska
+28:Nevada
+29:New Hampshire
+30:New Jersey
+38:Pennsylvania
+42:Tennessee
+43:Texas
+44:Utah
+46:Virginia
+48:West Virginia

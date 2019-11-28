@@ -1,0 +1,32 @@
+
+<p>
+  <strong> <h1><%= @todo_list.list_name %></h1></strong>
+  <strong>List due date:</strong>
+  <%= @todo_list.list_due_date %>
+</p>
+
+<%= link_to 'Edit List Details', edit_todo_list_path(@todo_list) %> |
+<%= link_to 'Back', todo_lists_path %>
+
+<br>
+<br>
+
+<strong> Todo Items:</strong>
+<table>
+  <tbody>
+    <% @todo_list.todo_items.each do |todo_item| %>
+      <tr>
+        <td><%= todo_item.title %></td>
+        <td><%= todo_item.due_date %></td>
+        <td><%= todo_item.description %></td>
+        <td><%= todo_item.completed %></td>
+        <td><%= link_to 'Show', [@todo_list, todo_item] %></td>
+        <td><%= link_to 'Destroy', [@todo_list, todo_item], method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "New Todo Item", new_todo_list_todo_item_path(@todo_list) %></p>
+
+

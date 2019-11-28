@@ -1,0 +1,239 @@
+
+Metacharacter	Meaning
+.	Any Character
+\w	A Word
+\W	Not a Word
+\d	A Digit
+\D	Not a Digit
+\s	Whitespace
+\S	Not Whitespace
+[def]	A Set of Characters
+[^def]	Negation of Set
+[e-q]	A Range of Characters
+^	Beginning of String
+$	End of String
+\n	Newline
++	One or More of Previous
+*	Zero or More of Previous
+?	Zero or One of Previous
+|	Either the Previous or the Following
+{6}	Exactly 6 of Previous
+{4, 6}	Between 4 and 6 or Previous
+{4, }	More than 4 of Previous
+-----------------------------------
+egrep "\+" small.txt
+
+## tragedy + time = humor
+
+egrep "\." small.txt
+
+## http://www.jhsph.edu/
+
+egrep "^M" states.txt
+
+## Maine
+## Maryland
+## Massachusetts
+## Michigan
+## Minnesota
+## Mississippi
+## Missouri
+## Montana
+
+egrep "North|South|East|West" states.txt
+
+## North Carolina
+## North Dakota
+## South Carolina
+## South Dakota
+## West Virginia
+
+egrep -n "t$" states.txt
+
+## 7:Connecticut
+## 45:Vermont
+
+egrep "New" states.txt canada.txt
+
+## states.txt:New Hampshire
+## states.txt:New Jersey
+## states.txt:New Mexico
+## states.txt:New York
+## canada.txt:Newfoundland and Labrador
+## canada.txt:New Brunswick
+
+egrep "^[AEIOU]{1}.+[aeiou]{1}$" states.txt
+
+## Alabama
+## Alaska
+## Arizona
+## Idaho
+## Indiana
+## Iowa
+## Ohio
+## Oklahoma
+---------------------------------
+find . -name "states.txt"
+
+## ./Documents/states.txt
+
+find . -name "*.jpg"
+
+## ./Photos/2016-06-21-lab01.jpg
+## ./Photos/2016-06-21-lab02.jpg
+## ./Photos/2017/2017-01-02-hiking01.jpg
+## ./Photos/2017/2017-01-02-hiking02.jpg
+## ./Photos/2017/2017-02-10-hiking01.jpg
+## ./Photos/2017/2017-02-10-hiking02.jpg
+
+
+find . -type f \( -name "*.sh" -o -name "*.txt" -o -name "*.c" \)
+#Assuming that you want to find all files in the current directory with .sh and .txt file extensions, you can do this by running the command below
+#    . means the current directory
+#    -type option is used to specify file type and here, we are searching for regular files as represented by f
+#    -name option is used to specify a search pattern in this case, the file extensions
+#    -o means “OR”
+
+______________________________
+
+ls -al | grep "Feb" | less
+
+-rw-r--r--   1 sean  staff   472 Feb 22 13:47 states.txt
+
+
+grep "[aeiou]$" states.txt | wc -l
+
+## 32
+
+
+cat canada.txt | head -n 5
+
+Nunavut
+Quebec
+Northwest Territories
+Ontario
+British Columbia
+
+---------------------------------------
+
+Use arithmetic expansion: $((EXPR))
+
+num=$((num1 + num2))
+num=$(($num1 + $num2))       # also works
+num=$((num1 + 2 + 3))        # ...
+num=$[num1+num2]             # old, deprecated arithmetic expression syntax
+
+sum=`echo "$A + $B" | bc -l` #deprecated?
+sum=$(echo "$A + $B" | bc -l) #recommended
+echo "The result is $sum"
+let sum="$A + $B"; echo "The result is $sum" #another possible solution for integer numbers
+
+https://www.gnu.org/software/bash/manual/html_node/Command-Substitution.html
+
+
+-----------------------------------
+
+Conditional Expression are in double brackets ( [[ ]] )
+
+Logical Flag					Meaning	Usage
+-gt	Greater Than				[[ $planets -gt 8 ]]
+-ge	Greater Than or Equal To	[[ $votes -ge 270 ]]
+-eq	Equal						[[ $fingers -eq 10 ]]
+-ne	Not Equal					[[ $pages -ne 0 ]]
+-le	Less Than or Equal To		[[ $candles -le 9 ]]
+-lt	Less Than					[[ $wives -lt 2 ]]
+-e	A File Exists				[[ -e $taxes_2016 ]]
+-d	A Directory Exists			[[ -d $photos ]]
+-z	Length of String is Zero	[[ -z $name ]]
+-n	Length of String is Non-Zero	[[ -n $name ]]
+
+Logical Operator				Meaning	Usage
+=~	Matches Regular Expression	[[ $consonants =~ [aeiou] ]]
+=	String Equal To				[[ $password = "pegasus" ]]
+!=	String Not Equal To			[[ $fruit != "banana" ]]
+!	Not							[[ ! "apple" =~ ^b ]]
+
+--------------------------------------
+chmod 
+
+Character	Meaning
+u	The owner of the file
+g	The group that the file belongs to
+o	Everyone else
+a	Everyone above
+
++	Add permission
+-	Remove permission
+=	Set permission
+
+r	Read a file
+w	Write to or edit a file
+x	Execute a file
+
+chmod u+x short
+chmod go-w test.txt
+chmod a+x my_program
+chmod go-rw my_program
+
+______________________________________
+
+To write a script that can be executed on the command line you can:
+
+--write a test_script.sh file and call it using the bash command
+# bash test_script.sh
+
+-- to use the functions that we define as command line programs, Once you close your current shell you’ll lose access to the test command
+write a test.sh file and use the source command, which allows us to use function definitions in bash scripts as command line commands
+#!/usr/bin/env bash
+# File: test.sh
+
+function test {
+  echo "Nice to meet you $1!"
+}
+
+# source test.sh
+# test one
+
+Nice to meet you one!
+
+--If we want one of our functions to be available always as a command then we need to change the PATH variable. We can designate a path of our choosing to be our very own /bin directory and we can add it to the PATH variable. We need to modify PATH every time we start a shell, so we can ammend our ~/.bash_profile so that our directory for executable scripts is always in the PATH.
+
+export PATH=~/Projects/workbench/Commands:$PATH
+
+and make sure that the script is a executable file if I want to call it using the filename or by double clicking it.
+
+
+Even though we’ve made our file executable, if we give our program to somebody else they might be using a shell that doesn’t know how to execute our program. We need to indicate how the program should be run by adding a special line of text to the beginning of our program called a shebang. The shebang always begins with #! followed by the path to the program which will execute the code in our file.
+#!/usr/bin/env bash
+
+
+
+-------------------------------------
+ cron table column use
+
+ # m h  dom mon dow   command
+00 * * * * bash /path/to/script.sh     # Runs every hour at the start of the hour
+00 12 * * * bash /path/to/script.sh    # Runs every day at noon
+* 12 * * * bash /path/to/script.sh     # Runs every minute between 12pm and 12:59pm
+00 00 05 * * bash /path/to/script.sh   # Runs the 5th day of every month at midnight
+00 00 * 07 * bash /path/to/script.sh   # Runs every day in the month of July at midnight
+00 00 * * 2 bash /path/to/script.sh    # Runs every Tuesday at midnight
+# m h  dom mon dow   command
+00-04 * * * * bash /path/to/script.sh       # Runs every minute for the first five minutes of every hour
+00 00 * * 0,6 bash /path/to/script.sh       # Runs at midnight every Saturday and Sunday
+00 03 01-15 * * bash /path/to/script.sh     # Runs at 3am for the first fifteen days of every month 
+00,30 * * * * bash /path/to/script.sh       # Runs at the start and middle of every hour
+00 00,12 * * * bash /path/to/script.sh      # Runs every day at midnight and noon
+00 * 01-07 01,06 * bash /path/to/script.sh  # Runs at the start of every hour for the first seven days of the months of January and June
+
+--------------------------
+    scp copies files between a cloud computer and your personal computer. Use the -r flag in order to copy directories.
+    scp source ... target
+    
+    curl allows you to send HTTP requests to other servers. Use the -Oflag to download files with curl.
+    ps -A lists all of the programs running in the background of your computer.
+    cron allows you to schedule when programs are run. Use crontab -e in order to edit the cron table.
+    wc can Inspect properties of a text file
+	head and tail Peak at the beginning and end of a text file.
+	apropos If you can’t think of the name of a command use apropos to search for a word associated with that command.
+

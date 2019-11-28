@@ -1,0 +1,50 @@
+Notes for Course 2 Module 2 Assignment
+
+#
+# The Entity Relationship (ER) diagram 
+#
+
+|------| 1 1 	  |----------|
+| User |----------| Profile |
+|------| 		  |----------|
+
+\
+\
+\ 1 *  |----------| 1 * 	 |----------|
+\------| TodoList |----------| TodoItem |
+ 	   |----------| 	     |----------|
+#
+# Step 4 for Getting Started instructs to initialize rspec with the rails g rspec:install command, but the following error is returned. I've seen this issue numerous times now
+# the fix is to install the older version of sqlite3. The instructions repeated say to not make any changes to the Gemfile, but this is the only change that I make to allow
+# for the application to work. I had to do this for Module 1 assignment and the grader still passed it.
+#
+
+ 	   [admin todolists]$ rails generate rspec:install
+/Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activesupport-4.2.8/lib/active_support/core_ext/object/duplicable.rb:111: warning: BigDecimal.new is deprecated; use BigDecimal() method instead.
+/Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-4.2.8/lib/active_record/connection_adapters/connection_specification.rb:177:in `rescue in spec': Specified 'sqlite3' for database adapter, but the gem is not loaded. Add `gem 'sqlite3'` to your Gemfile (and ensure its version is at the minimum required by ActiveRecord). (Gem::LoadError)
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-4.2.8/lib/active_record/connection_adapters/connection_specification.rb:174:in `spec'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-4.2.8/lib/active_record/connection_handling.rb:50:in `establish_connection'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-4.2.8/lib/active_record/railtie.rb:120:in `block (2 levels) in <class:Railtie>'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activesupport-4.2.8/lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activesupport-4.2.8/lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activesupport-4.2.8/lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activesupport-4.2.8/lib/active_support/lazy_load_hooks.rb:44:in `each'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activesupport-4.2.8/lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-4.2.8/lib/active_record/base.rb:315:in `<module:ActiveRecord>'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-4.2.8/lib/active_record/base.rb:26:in `<top (required)>'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activesupport-4.2.8/lib/active_support/dependencies.rb:274:in `require'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activesupport-4.2.8/lib/active_support/dependencies.rb:274:in `block in require'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activesupport-4.2.8/lib/active_support/dependencies.rb:240:in `load_dependency'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activesupport-4.2.8/lib/active_support/dependencies.rb:274:in `require'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/spring-2.1.0/lib/spring/application.rb:370:in `active_record_configured?'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/spring-2.1.0/lib/spring/application.rb:287:in `disconnect_database'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/spring-2.1.0/lib/spring/application.rb:111:in `preload'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/spring-2.1.0/lib/spring/application.rb:157:in `serve'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/spring-2.1.0/lib/spring/application.rb:145:in `block in run'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/spring-2.1.0/lib/spring/application.rb:139:in `loop'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/spring-2.1.0/lib/spring/application.rb:139:in `run'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/spring-2.1.0/lib/spring/application/boot.rb:19:in `<top (required)>'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /Users/admin/.rbenv/versions/2.6.5/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from -e:1:in `<main>'
+
