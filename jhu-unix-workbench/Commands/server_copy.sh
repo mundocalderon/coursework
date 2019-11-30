@@ -8,7 +8,7 @@ function super_copy {
 		scp $1 $DO_ROOT_USER:/root/textfiles/ 
 	else
 		echo "$1 : File not found"
-	fiww
+	fi
 
 }
 
