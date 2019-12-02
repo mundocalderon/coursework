@@ -96,10 +96,53 @@ find . -type f \( -name "*.sh" -o -name "*.txt" -o -name "*.c" \)
 
 ______________________________
 
+cd ~/Documents
+head -n 4 states.txt > four.txt
+head -n 6 states.txt > six.txt
+
+diff four.txt six.txt
+
+## 4a5,6
+## > California
+## > Colorado
+
+sdiff four.txt six.txt
+
+## Alabama              Alabama
+## Alaska               Alaska
+## Arizona              Arizona
+## Arkansas             Arkansas
+##                    > California
+##                    > Colorado
+
+
+md5 states.txt
+
+## MD5 (states.txt) = 8d7dd71ff51614e69339b03bd1cb86ac
+
+md5 states_copy.txt
+
+## MD5 (states_copy.txt) = 8d7dd71ff51614e69339b03bd1cb86ac
+
+shasum states.txt
+
+## 588e9de7ffa97268b2448927df41760abd3369a9  states.txt
+
+shasum states_copy.txt
+
+## 588e9de7ffa97268b2448927df41760abd3369a9  states_copy.txt
+
+
+
+
+---------------------------------
+The pipe can also be used multiple times in one command in order to take the output from one piped command and use it as the input to yet another program! For example we could use three pipes with ls, grep, and less so that we could scroll through the files in out current directory were created in February:
+
 ls -al | grep "Feb" | less
 
 -rw-r--r--   1 sean  staff   472 Feb 22 13:47 states.txt
 
+“How many US states end in a vowel?” We could use grep and regular expressions to list all of the state names that end with a vowel, then we could use wc to count all of the matching state names:
 
 grep "[aeiou]$" states.txt | wc -l
 
@@ -227,13 +270,13 @@ Even though we’ve made our file executable, if we give our program to somebody
 00 * 01-07 01,06 * bash /path/to/script.sh  # Runs at the start of every hour for the first seven days of the months of January and June
 
 --------------------------
-    scp copies files between a cloud computer and your personal computer. Use the -r flag in order to copy directories.
-    scp source ... target
-    
-    curl allows you to send HTTP requests to other servers. Use the -Oflag to download files with curl.
-    ps -A lists all of the programs running in the background of your computer.
-    cron allows you to schedule when programs are run. Use crontab -e in order to edit the cron table.
-    wc can Inspect properties of a text file
-	head and tail Peak at the beginning and end of a text file.
-	apropos If you can’t think of the name of a command use apropos to search for a word associated with that command.
+scp copies files between a cloud computer and your personal computer. Use the -r flag in order to copy directories.
+scp source ... target
+
+curl allows you to send HTTP requests to other servers. Use the -Oflag to download files with curl.
+ps -A lists all of the programs running in the background of your computer.
+cron allows you to schedule when programs are run. Use crontab -e in order to edit the cron table.
+wc can Inspect properties of a text file
+head and tail Peak at the beginning and end of a text file.
+apropos If you can’t think of the name of a command use apropos to search for a word associated with that command.
 

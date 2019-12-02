@@ -23,6 +23,4 @@ alias mysql='mysql -uroot -p'
 alias cdcap='cd /Users/mundocalderon/Sites/capsf-web/'
 alias fresh='sudo service httpd restart'
 
-alias recentclear='defaults delete -g NSNavRecentPlaces'
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
