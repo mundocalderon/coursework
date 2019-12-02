@@ -1,0 +1,143 @@
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+0123456789
+aa bb cc
+rhythms
+xyz
+abc
+tragedy + time = humor
+http://www.jhsph.edu/
+#%&-=***=-&%#
+
+
+egrep "\w" small.txt
+
+## abcdefghijklmnopqrstuvwxyz
+## ABCDEFGHIJKLMNOPQRSTUVWXYZ
+## 0123456789
+## aa bb cc
+## rhythms
+## xyz
+## abc
+## tragedy + time = humor
+## http://www.jhsph.edu/
+
+egrep "\d" small.txt
+
+## 0123456789
+
+egrep "\s" small.txt
+
+## aa bb cc
+## tragedy + time = humor
+
+egrep -v "\w" small.txt
+
+## #%&-=***=-&%#
+
+egrep "\W" small.txt
+
+## aa bb cc
+## tragedy + time = humor
+## http://www.jhsph.edu/
+## #%&-=***=-&%#
+
+egrep "[aeiou]" small.txt
+
+## abcdefghijklmnopqrstuvwxyz
+## aa bb cc
+## abc
+## tragedy + time = humor
+## http://www.jhsph.edu/
+
+egrep "[^aeiou]" small.txt
+
+## abcdefghijklmnopqrstuvwxyz
+## ABCDEFGHIJKLMNOPQRSTUVWXYZ
+## 0123456789
+## aa bb cc
+## rhythms
+## xyz
+## abc
+## tragedy + time = humor
+## http://www.jhsph.edu/
+## #%&-=***=-&%#
+
+egrep "[e-q]" small.txt
+
+## abcdefghijklmnopqrstuvwxyz
+## rhythms
+## tragedy + time = humor
+## http://www.jhsph.edu/
+
+egrep "[E-Q]" small.txt
+
+## ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+egrep "[e-qE-Q]" small.txt
+
+## abcdefghijklmnopqrstuvwxyz
+## ABCDEFGHIJKLMNOPQRSTUVWXYZ
+## rhythms
+## tragedy + time = humor
+## http://www.jhsph.edu/
+
+egrep "\+" small.txt
+
+## tragedy + time = humor
+
+egrep "\." small.txt
+
+## http://www.jhsph.edu/
+
+egrep "^M" states.txt
+
+## Maine
+## Maryland
+## Massachusetts
+## Michigan
+## Minnesota
+## Mississippi
+## Missouri
+## Montana
+
+
+egrep "North|South" states.txt
+
+## North Carolina
+## North Dakota
+## South Carolina
+## South Dakota
+
+egrep "North|South|East|West" states.txt
+
+## North Carolina
+## North Dakota
+## South Carolina
+## South Dakota
+## West Virginia
+
+egrep -n "t$" states.txt
+
+## 7:Connecticut
+## 45:Vermont
+
+egrep "New" states.txt canada.txt
+
+## states.txt:New Hampshire
+## states.txt:New Jersey
+## states.txt:New Mexico
+## states.txt:New York
+## canada.txt:Newfoundland and Labrador
+## canada.txt:New Brunswick
+
+egrep "^[AEIOU]{1}.+[aeiou]{1}$" states.txt
+
+## Alabama
+## Alaska
+## Arizona
+## Idaho
+## Indiana
+## Iowa
+## Ohio
+## Oklahoma

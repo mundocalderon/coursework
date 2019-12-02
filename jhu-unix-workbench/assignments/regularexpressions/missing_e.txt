@@ -1,0 +1,30 @@
+1:Alabama
+2:Alaska
+3:Arizona
+4:Arkansas
+5:California
+6:Colorado
+9:Florida
+11:Hawaii
+12:Idaho
+13:Illinois
+14:Indiana
+15:Iowa
+16:Kansas
+18:Louisiana
+20:Maryland
+22:Michigan
+24:Mississippi
+25:Missouri
+26:Montana
+33:North Carolina
+34:North Dakota
+35:Ohio
+36:Oklahoma
+40:South Carolina
+41:South Dakota
+44:Utah
+46:Virginia
+47:Washington
+49:Wisconsin
+50:Wyoming

@@ -1,0 +1,70 @@
+Write a bash script that takes a file path as an argument and copies that file to a designated folder on your server.
+  ./jhu-unix-workbench/Commands/server_copy.sh
+#!/usr/bin/env bash
+
+
+function super_copy { 
+	if [[ -e $1 ]]
+	then
+		echo "$1"
+		scp $1 $DO_ROOT_USER:/root/textfiles/ 
+	else
+		echo "$1 : File not found"
+	fi
+
+}
+
+echo "This utility expects a file as an argument: '$1' was given. It also expects you to use the super_copy function."
+
+
+Find a file online that changes periodically, then write a program to download that file every time it changes.
+  ./jhu-unix-workbench/assignments/nephology/file_updator.sh
+
+#!/usr/bin/env bash
+
+if [[ -e guestbook.md ]]
+then
+	echo "guestbook exists!"
+	first_md5=$(md5 guestbook.md | awk '{ print $4 }')
+	echo "guestbook md5 is $first_md5"
+	compare_md5=$(curl -s https://raw.githubusercontent.com/seankross/the-unix-workbench/master/guestbook.md | md5 )
+	echo "the online md5 is $compare_md5"
+	if [[ $first_md5 == $compare_md5 ]]
+	then
+		echo "We have the most up-to-date guestbook!"
+	else
+		echo "There's been a change to the guestbook, let's see who signed it!"
+		curl -O https://raw.githubusercontent.com/seankross/the-unix-workbench/master/guestbook.md
+		tail -n 5 guestbook.md
+	fi
+else
+	curl -O https://raw.githubusercontent.com/seankross/the-unix-workbench/master/guestbook.md
+	tail -n 5 guestbook.md
+fi
+
+
+Try creating your own Twitter or GitHub bot with the Twitter API or the GitHub API.
+./jhu-unix-workbench/assignments/nephology/twurl_test.sh
+
+
+#!/usr/bin/env bash
+tname="realdonaldtrump"
+lie_id=$(twurl "/1.1/statuses/user_timeline.json?screen_name=$tname&count=1" | jq -r '.[0].id_str' )
+lie=$(twurl "/1.1/statuses/user_timeline.json?screen_name=$tname&count=1" | jq -r '.[0].text' )
+lie_length=$(twurl "/1.1/statuses/user_timeline.json?screen_name=$tname&count=1" | jq '.[0].text | length ')
+echo $lie_id, $lie, $lie_length, $tname
+
+random=$(( $RANDOM % 2 ))
+if [[ $random -eq 0 ]]
+then
+	#echo  -d "status=LIES!&in_reply_to_status_id=$lie_id&auto_populate_reply_metadata=true" /1.1/statuses/update.json
+
+	twurl -d "status=LIES!&in_reply_to_status_id=$lie_id&auto_populate_reply_metadata=true" /1.1/statuses/update.json
+else
+	#echo  -d "status=OK BOOMER.&in_reply_to_status_id=$lie_id&auto_populate_reply_metadata=true" /1.1/statuses/update.json
+
+	twurl -d "status=OK BOOMER.&in_reply_to_status_id=$lie_id&auto_populate_reply_metadata=true" /1.1/statuses/update.json
+fi
+
+
+

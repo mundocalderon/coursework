@@ -1,0 +1,6 @@
+total 8
+drwxr-xr-x  5 admin  staff  160 Dec  1 14:51 ./
+drwxr-xr-x  7 admin  staff  224 Dec  1 14:48 ../
+-rw-r--r--  1 admin  staff    0 Dec  1 14:50 draft_journal_entry.txt
+-rw-r--r--@ 1 admin  staff  297 Dec  1 14:50 makefile
+-rw-r--r--  1 admin  staff    0 Dec  1 14:51 toc.txt

@@ -1,0 +1,19 @@
+# bash commands to complete exercises
+
+Search states.txt and canada.txt for lines that contain the word “New”.
+
+$ egrep -n "New" states.txt canada.txt 
+
+
+Make five text files containing the names of states that don’t contain one of each of the five vowels.
+
+$ grep -vni [a] states.txt > missing_a.txt 
+$ grep -vni [e] states.txt > missing_e.txt 
+$ grep -vni [i] states.txt > missing_i.txt 
+$ grep -vni [o] states.txt > missing_o.txt 
+$ grep -vni [u] states.txt > missing_u.txt
+
+Download the GitHub repository for this book and find out how many .html files it contains.
+
+$ find the-unix-workbench/ -name "*.html" | wc -l
+      13
