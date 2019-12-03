@@ -1,0 +1,12 @@
+Course3 - MongoDB, NoSQL, Mongoid
+
+MongoDB
+	brew tap mongodb/brew
+    brew install mongodb-community@4.2
+	brew services start mongodb-community
+	mongo
+
+    the configuration file (/usr/local/etc/mongod.conf)
+    the log directory path (/usr/local/var/log/mongodb)
+    the default data directory path (/usr/local/var/mongodb) -> changed to /Users/admin/Projects/Coursework/jhu-rails-course3/data/db
+

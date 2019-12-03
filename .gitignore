@@ -17,3 +17,6 @@
 */tmp
 /fullstack*
 *.DS_Store
+
+Ignore data directory for mongodb
+jhu-rails-course3/data/db/*
