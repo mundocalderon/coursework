@@ -21,7 +21,9 @@ feature "Module #2 Seed File Tests" do
   context "rq01" do
 
     before :all do
-      load "./db/seeds.rb" 
+      puts "!!!!"
+      load "./db/seeds.rb"
+      puts "^^^^" 
     end
 
     it "loads all data from ./db/places.json" do

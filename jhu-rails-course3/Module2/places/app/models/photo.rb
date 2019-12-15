@@ -1,5 +1,5 @@
 class Photo
-	require 'EXIFR/JPEG'
+	require 'exifr/jpeg'
 
 	attr_accessor :id, :location, :place
 	attr_writer :contents
