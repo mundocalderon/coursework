@@ -177,7 +177,7 @@ feature "Module #3 Web Race/Racer Resource Access", :type => :routing do
       page.all('a').each { |l|
         link_uri = URI.parse(l[:href]).to_s
         if ((link_uri.split("/"))[1] == "races") then    
-          cur_race_id = (link_uri.split("/"))[2]   
+          cur_race_id = (link_uri.split("/"))[2]
           r = Race.find(cur_race_id)
           page.click_link("Results")
           expect(page.status_code).to eq 200

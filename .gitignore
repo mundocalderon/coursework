@@ -18,5 +18,8 @@
 /fullstack*
 *.DS_Store
 
-Ignore data directory for mongodb
+#Ignore data directory for mongodb
 jhu-rails-course3/data/db/*
+
+#ignore zip files
+*.zip

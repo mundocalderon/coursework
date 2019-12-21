@@ -2,6 +2,9 @@ Course3 - MongoDB, NoSQL, Mongoid
 
 What is lazy loading?
 
+Ruby metaprogramming???
+Ruby delegate method
+
 In talking about relationships, would there ever be a case when a class  Place is embedded_in :locatable , polymorphic:false? 
 
 MongoDB
