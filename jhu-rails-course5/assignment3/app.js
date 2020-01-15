@@ -23,19 +23,25 @@ NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService){
 	var list = this;
 	
-	var empty = "";
+	var empty = false;
 	list.searchTerm = "";
 	list.found = [];
 
+
 	list.find = function(searchTerm){
-		var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
-		promise.then(function (response){
-			list.found = response;
-			list.empty = list.found.length > 0 ? false : true;
-			console.log(list.found);
-		}).catch(function(error){
-			console.log("error fulfilling promise!");
-		})
+		if (list.searchTerm == "") {
+			list.empty = true;
+			list.found = [];
+		} 
+		else {
+			var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
+			promise.then(function (response){
+				list.found = response;
+				list.empty = list.found.length > 0 ? false : true;
+			}).catch(function(error){
+				console.log("error fulfilling promise!");
+			})
+		}
 	}
 
 	list.removeItem = function(index){
