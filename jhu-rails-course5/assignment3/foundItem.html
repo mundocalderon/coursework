@@ -1,0 +1,9 @@
+<div class="col-md-12 col-lg-12 col-sm-12"> 
+	<h2> List of found items</h2>
+	<ul>
+		<li ng-repeat="item in foundItems">
+			 <button ng-click="onRemove({index : $index})">X</button> {{ item.name }} :: {{ item.short_name }} :: {{ item.description }}
+		</li>
+	</ul>
+
+</div>
