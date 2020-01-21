@@ -1,0 +1,3 @@
+<ul>	
+	<li ng-repeat="item in $ctrl.items"><a href="{{item.url}}" ui-sref="itemsList({itemsListId: item.short_name })"> {{ item.name }} :: {{ item.short_name }}</li>
+</ul>
