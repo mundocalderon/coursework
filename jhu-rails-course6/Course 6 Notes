@@ -1,0 +1,27 @@
+Course 6 Notes
+
+Sanity Check on Dev Environment - Checked out the course example and following the following build steps.
+
+- I'm using rails 4.2.8, but example gemfile uses 4.2.6
+  -going to change example gemfile to use 4.2.8
+- running bundle update to get the right versions of gems
+- running the bundle exec rake db:migrate returns Sprockets::Railtie::ManifestNeededError: Expected to find a manifest file in `app/assets/config/manifest.js`
+- mkdir -p app/assets/config && echo '{}' > app/assets/config/manifest.js to create an empty manifest.js file.
+
+
+Assignment 1 steps
+- git init-iated a new directory and added a readme
+-  rails-api new . -T -d postgresql - dash T is so that it skips testing templates and dash d to declare the db
+- updates to database.yml file, using environment variables to auth into db
+- run rake db:create, rake db:migrate, go through manifest fix, add to gemfile
+- rails g rspec:install
+- rails g rspec:request APIDevelopment
+- Our Requirements so far: create a RDBMS-backed model, expose RDBMBS-backed API resource, create a MongoDB-backed model, expose MongoDB-backed API resource
+- rails-api g scaffold City name --orm active_record --no-request-specs --no-routing-specs --no-controller-specs
+- rails-api g scaffold State name --orm mongoid --no-request-specs --no-routing-specs --no-controller-specs
+- Provision MongoDB 
+- Provision Heroku servers
+- deploy to heroku - I ran into an issue where deploying to heroku tries to precompile assets and there were assets gems not in the gemfile. I added the gems, bundled, and GIT COMMIT them, the push again and it worked.
+- set the MONGO_URI to mongodb+srv://admin:<password>@clustercapstone-zl3dy.mongodb.net/test?retryWrites=true&w=majority
+- mongodb atlas wants whitelisted IP addresses, so for heroku i used 0.0.0.0/0
+-once i've fully deployed to staging, ill switch over to master 'git checkout master', and 'git merge staging-app' changes into master
