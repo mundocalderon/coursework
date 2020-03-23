@@ -10,6 +10,7 @@ Sanity Check on Dev Environment - Checked out the course example and following t
 
 
 Assignment 1 steps
+
 - git init-iated a new directory and added a readme
 -  rails-api new . -T -d postgresql - dash T is so that it skips testing templates and dash d to declare the db
 - updates to database.yml file, using environment variables to auth into db
@@ -24,4 +25,71 @@ Assignment 1 steps
 - deploy to heroku - I ran into an issue where deploying to heroku tries to precompile assets and there were assets gems not in the gemfile. I added the gems, bundled, and GIT COMMIT them, the push again and it worked.
 - set the MONGO_URI to mongodb+srv://admin:<password>@clustercapstone-zl3dy.mongodb.net/test?retryWrites=true&w=majority
 - mongodb atlas wants whitelisted IP addresses, so for heroku i used 0.0.0.0/0
+- in config/environments/production.rb set config.force_ssl = true
 -once i've fully deployed to staging, ill switch over to master 'git checkout master', and 'git merge staging-app' changes into master
+
+Assignment 2 steps
+
+- In preparing for production we make sure that assets ( js and css) are going to be compressed, production.rb file is updated to use uglifier and sass
+- We'll need to add gems, asset directories and manifests, create assets initializer file, make server updates for precompiles, html page updates
+- To properly have assets precompiled, run RAILS_ENV=production rake assets:precompile. Heroku assumes we precompile files to the /public directory, but if you don't specify the ENV, then uglifier doesn't uglify and it does development level precompiling and pushes that to heroku's public directory. How do I tell Heroku to precompile before deployment instead of precompiling locally and pushing those files.
+(Web client development outside of rails asset pipeline uses node package manager, bower, and gulp tasks.)
+- I created a git branch to go through install and init of npm, bower, and gulp tasks.
+- Gulp Build Tasks - A build is made up of the most up to date source files, so the build tasks are mostly moving, sourcemapping, and grouping assets from different directories to one place that will serve up the latest build.
+- Gulp branch was deployed to github pages, then we made edits to client to be able to be reployed from within the rails app on heroku and deployed that. once we had all 3 versions working, we merged the branches first into a temporary branch ap-external, and then into master.
+- ui-router is tied to the <div ui-view></div>, so when we include it in our module, we define ui-router states and it is then displayed by the asset pipeline. we also have to register these javascript files in the manifest file.
+- added our new module to access the cities resource, added file to manifest, and added API server location to app.config.js
+(what the difference between Factory, Service, Provider? in the context of building a resource service to communicate with the RAILS API)
+(Our factory returns a $resource that represents the collection of cities, instances of $resources represnts individual cities, $resouce is a part of ngResource )
+(Angular Controller: Provides data and callbacks to the PAGE, accessible through the assigned 'controllerAs' - It primarily integrates the view with services, the services should contain any detailed code and controllers are integration code - new instances are created for each page creation, the injected services are singleton "helpers")
+(whats the difference between Directive and Component?)
+- added City service, controller, directive
+- added a layout.css to start my styling
+- filled out the city controller to perform CRUD operations
+- deployed all 3 environments
+- made CORS configurations
+- branched out to assignment-2, removed all traces of other environments and am sticking to using the asset-pipeline, deployed to heroku and pushed branch to github.
+
+Assignment 3
+
+Testing
+Gems / Tools
+ Rspec - a domain specific for testing - use the shared context and shared examples. Use Ruby Modules,to build helper methods around some complex application interactions,like login and logout, so that we don't want to repeat everywhere. 
+ Database Cleaner - to give us some transactional and truncation  db clean up strategies, to get db in a known state.
+ Factory Girl - as objects get complex we can abstractify object creation in our tests.
+ Faker Gem - to insert simulated data
+ Capybary - to test web ui
+ Selenium Driver - good for authoring, can see the interaction with the browser, keystrokes, button clicks, fields being filled in
+ PhantomJS Driver with Poltergeist gem - have a nice headless solution, use that more for regression testing.  
+
+Rspe Test types
+ Unit - The item that is being tested is isolated, we use stubs and mocks to test that item specifically.
+ Integration - the item that is being tested in the flow. Take a point in the application, go to the database and back. Takes longer to execute the tests and is limited in what can be tested, but gives us a more complete perspective of real world experience.
+ Regression - will point out if we break something while we're implementing a feature down the road.
+
+Model Specs on query scropes, facade methods, and relationships.
+Request Specs evaluate APIs for functionality and payload concepts before building UI on top
+Feature Specs will use Capybary to test the web ui and will use two drivers to do that.
+
+Rspec tests
+	Tips for DRYing examples(tests)
+	 - before/afer blocks
+	 - 'context' block refers to a example(test) group, 'it' blocks or 'scenario' blocks refer to individual examples(test)
+	 - before(:all)/after(:all) blocks run once before/after all examples
+	 - before(:each)/after(:each) blocks run before/after every example
+	 - using '@attributes' allow for sharing/access between blocks
+	 - 'let' blocks can replace the before blocks by instantiating their block whenever called, 'lazy instantiation'
+
+	Drafting Tests
+	 - Listing requirements only => don't add a block
+	 - Expecting failures => use a pending block
+	 - Bypasing tests => add an 'x' to the beginning of the line
+
+
+
+
+
+
+
+
+
