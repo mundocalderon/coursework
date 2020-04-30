@@ -12,4 +12,4 @@ function super_copy {
 
 }
 
-echo "This utility expects a file as an argument: '$1' was given. It also expects you to use the super_copy function."
+#echo "This utility expects a file as an argument: '$1' was given. It also expects you to use the super_copy function."
