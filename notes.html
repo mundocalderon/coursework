@@ -1,0 +1,1335 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>@font-face {
+  font-family: octicons-anchor;
+  src: url(https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.woff) format('woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    color:#333;
+    background:#fff;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+pre {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body input {
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .select::-ms-expand {
+  opacity: 0;
+}
+
+.markdown-body .octicon {
+  font: normal normal normal 16px/1 octicons-anchor;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h1 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h3 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h5 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body h6 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .pl-c {
+  color: #969896;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #0086b3;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #333;
+}
+
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+
+.markdown-body .pl-k {
+  color: #a71d5d;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #183691;
+}
+
+.markdown-body .pl-v {
+  color: #ed6a43;
+}
+
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mq {
+  color: #008080;
+}
+
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .plan-price-unit {
+  color: #767676;
+  font-weight: normal;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 0.35em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body .plan-choice {
+  padding: 15px;
+  padding-left: 40px;
+  display: block;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  font-weight: normal;
+  background-color: #fafafa;
+}
+
+.markdown-body .plan-choice.open {
+  background-color: #fff;
+}
+
+.markdown-body .plan-choice.open .plan-choice-seat-breakdown {
+  display: block;
+}
+
+.markdown-body .plan-choice-free {
+  border-radius: 3px 3px 0 0;
+}
+
+.markdown-body .plan-choice-paid {
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  margin-bottom: 20px;
+}
+
+.markdown-body .plan-choice-radio {
+  position: absolute;
+  left: 15px;
+  top: 18px;
+}
+
+.markdown-body .plan-choice-exp {
+  color: #999;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.markdown-body .plan-choice-seat-breakdown {
+  margin-top: 10px;
+  display: none;
+}
+
+.markdown-body :checked+.radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4078c0;
+}
+
+@media print {
+  body .markdown-body {
+    padding: 0;
+    border: none;
+  }
+}
+</style><title>notes</title></head><body><article class="markdown-body"><h1>
+<a id="user-content-programming-and-ruby-notes" class="anchor" href="#programming-and-ruby-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Programming and Ruby Notes</h1>
+<h2>
+<a id="user-content-definitions" class="anchor" href="#definitions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Definitions</h2>
+<ul>
+<li>
+<p><strong>ORM</strong> - Object Relational Mapping</p>
+</li>
+<li>
+<p><strong>API</strong> - Application programming interface</p>
+<ul>
+<li>Computing interface which defines interactions between multiple software intermediaries.</li>
+<li>It defines the kinds of calls or requests that can be made, how to make them, the data formats that should be used, the conventions to follow, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Layer vs Model Layer</strong> -</p>
+</li>
+<li>
+<p><strong>REST vs SOAP</strong></p>
+<ul>
+<li>REST, or REpresentational State Transfer, is an architectural style for providing
+standards between computer systems on the web, making it easier for systems to communicate with each other.</li>
+<li>REST-compliant systems, often called RESTful systems, are characterized by how they are
+<strong>stateless</strong> and separate the concerns of client and server.</li>
+<li>
+<strong>SOAP</strong> - Simple Object Access Protocol, is its own protocol, and is a bit more complex by defining more standards than REST—things like security and how messages are sent.</li>
+<li>REST APIs use multiple standards like HTTP, JSON, URL, and XML while SOAP APIs is largely based on HTTP and XML.</li>
+<li>As REST API deploys multiple standards, it takes fewer resources and bandwidth as compared to SOAP that uses XML for the creation of payload and results in the large sized file.</li>
+<li>REST APIs access a resource for data (a URI); SOAP APIs perform an operation. REST is an architecture that’s more data-driven; SOAP is a standardized protocol for transferring structured information that’s more function-driven. REST API uses URL exposure like @path("/WeatherService") while SOAP API uses service interfaces like @WebService.</li>
+<li>REST calls can be cached, SOAP-based calls cannot be cached.</li>
+<li>An API is built to handle your app’s payload, and REST and SOAP do this differently. A payload is data sent over the internet, and when a payload is “heavy,” it requires more resources. REST tends to use HTTP and JSON, which lighten the payload; SOAP relies more on XML.
+SOAP is tightly coupled with the server; REST is coupled to a lesser degree. In programming, the more layers of abstraction between two pieces of technology, the less control you have over their interaction, but there’s also less complexity and it’s easier to make updates to one or the other without blowing up the whole relationship. The same goes for APIs and how closely they interact with a server. This is a key difference between SOAP and REST to consider. SOAP is very closely coupled with the server, having a strict communication contract with it that makes it more difficult to make changes or updates. A client interacting with a REST API needs no knowledge of the API, but a client interacting with a SOAP API needs knowledge about everything it will be using before it can even initiate an interaction.</li>
+</ul>
+</li>
+<li>
+<p><strong>Object Oriented Principles</strong> -</p>
+</li>
+<li>
+<p><strong>Design Patterns</strong> -</p>
+</li>
+<li>
+<p><strong>Joining Multiple Tables</strong> -</p>
+</li>
+<li>
+<p><strong>ACID properties</strong> -</p>
+</li>
+</ul>
+<hr>
+<h3>
+<a id="user-content-algorithms" class="anchor" href="#algorithms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Algorithms</h3>
+<p><strong>Edge Case</strong> - occurs at an extreme (maximum or minimum) operating parameter.</p>
+<p><strong>Base Case</strong> - is where Recursion ends</p>
+<div class="highlight highlight-source-ruby"><pre>    <span class="pl-k">def</span> <span class="pl-en">transmogrify</span><span class="pl-kos">(</span><span class="pl-en">int</span> <span class="pl-en">n</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+      <span class="pl-en">assert</span><span class="pl-kos">(</span><span class="pl-en">n</span> &lt;= <span class="pl-c1">1000000</span><span class="pl-kos">)</span><span class="pl-kos">;</span>               - - <span class="pl-pds">//</span> <span class="pl-v">Sanity</span> <span class="pl-v">Check</span>
+      <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-en">n</span> &lt; <span class="pl-c1">0</span><span class="pl-kos">)</span> <span class="pl-k">return</span> -<span class="pl-c1">1</span><span class="pl-kos">;</span>               <span class="pl-pds">//</span> <span class="pl-en">Input</span> <span class="pl-v">Check</span>
+      <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-en">n</span> == <span class="pl-c1">1000000</span><span class="pl-kos">)</span><span class="pl-kos"></span> <span class="pl-k">return</span> <span class="pl-c1">PRE_CALC</span><span class="pl-kos">;</span>  <span class="pl-pds">//</span><span class="pl-kos"></span> <span class="pl-en">Edge</span> <span class="pl-v">Case</span>
+      <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-en">n</span> == <span class="pl-c1">0</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-en">n</span>+<span class="pl-c1">1</span><span class="pl-kos">;</span>             <span class="pl-pds">//</span> <span class="pl-v">Base</span> <span class="pl-k">case</span> <span class="pl-v">For</span> <span class="pl-en">stopping</span> <span class="pl-en">the</span> <span class="pl-en">recursion</span>
+      <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-en">n</span> == <span class="pl-c1">1251</span><span class="pl-kos">)</span> <span class="pl-k">return</span> <span class="pl-c1">3077</span><span class="pl-kos">;</span>         <span class="pl-pds">//</span> <span class="pl-v">Special</span> <span class="pl-k">case</span>
+      
+      <span class="pl-k">return</span> <span class="pl-en">transmogrify</span><span class="pl-kos">(</span><span class="pl-en">n</span>-<span class="pl-c1">1</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span></pre></div>
+<hr>
+<h3>
+<a id="user-content-ruby-basics" class="anchor" href="#ruby-basics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ruby Basics</h3>
+<ul>
+<li>if/else</li>
+<li>case blocks</li>
+<li>while blocks</li>
+<li>until blocks</li>
+<li>unless</li>
+<li>.times</li>
+<li>.each
+<div class="highlight highlight-source-ruby"><pre><span class="pl-v">Array</span><span class="pl-kos">.</span><span class="pl-en">each</span> <span class="pl-k">do</span> |<span class="pl-s1">arr</span>| <span class="pl-kos">{</span> <span class="pl-en">puts</span> <span class="pl-s">"<span class="pl-s1"><span class="pl-kos">#{</span><span class="pl-s1">arr</span><span class="pl-kos">}</span></span>"</span> <span class="pl-kos">}</span> </pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p><strong>Literals</strong></p>
+<ul>
+<li>%w() is an array of strings, delimited by spaces.</li>
+<li>%r() is another way to write a regular expression.</li>
+<li>%q() is another way to write a single-quoted string (and can be multi-line, which is useful).</li>
+<li>%Q() gives a double-quoted string.</li>
+<li>%x(echo $PATH) is a shell command.</li>
+<li>%i() gives an array of symbols (Ruby &gt;= 2.0.0).</li>
+<li>%s() turns foo into a symbol (:foo).</li>
+</ul>
+</li>
+<li>
+<p><strong>.each vs .map</strong></p>
+<ul>
+<li>
+<code>Array.each do |arr| { puts "#{arr}" }</code> will print each object and then return the original Array</li>
+<li>
+<code>Array.map do |arr| { puts "#{arr}" }</code> will print each object and then return an array of nil because it returns nil for every puts call, puts returns nil</li>
+<li>
+<code>Array.map do |arr| { arr }</code> will print each object and return an array like the original because it return arr each time.</li>
+</ul>
+</li>
+<li>
+<p><strong>Blocks</strong></p>
+<ul>
+<li>chunks of code. enclosed between either curly braces or the keywords <code>do , end</code> Blocks often
+use iterators. Blocks are passed to methods as the last parameter. curly braces for single line
+blocks, <code>do</code> blocks for multiline blocks. when passing a block to a method it can be implicit or explicit. implicit uses <code>block_given?</code> and <code>yield</code>. explicit uses <code>&amp;</code> in parameter definition and <code>.call </code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Blocks vs Procs vs Lambdas</strong> -</p>
+</li>
+<li>
+<p><strong>Exceptions in the Model layer</strong></p>
+</li>
+</ul>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">begin</span> 
+  <span class="pl-v">File</span><span class="pl-kos">.</span><span class="pl-en">foreach</span><span class="pl-kos">(</span><span class="pl-s">"does_not_exist.txt"</span><span class="pl-kos">)</span> <span class="pl-k">do</span> |<span class="pl-s1">line</span>|
+    <span class="pl-en">whatever</span>
+  <span class="pl-k">end</span>
+<span class="pl-k">rescue</span> <span class="pl-v">StandardException</span> <span class="pl-c1">=&gt;</span> <span class="pl-en">e</span>
+  <span class="pl-en">puts</span> <span class="pl-en">e</span><span class="pl-kos">.</span><span class="pl-en">message</span>
+  <span class="pl-en">puts</span> <span class="pl-s">"oops"</span>
+<span class="pl-k">end</span></pre></div>
+<hr>
+<h4>
+<a id="user-content-splat--and-double-splat-" class="anchor" href="#splat--and-double-splat-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Splat * and Double Splat **</h4>
+<p>They can be thought of as operators to collect and split, the single collects/splits arrays, the double does so with keys of a hash.</p>
+<p><strong>One of the main uses of splat is to receive and undefinred number of arguments:</strong></p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">def</span> <span class="pl-en">splat_arguments</span><span class="pl-kos">(</span>*<span class="pl-s1">args</span><span class="pl-kos">)</span>
+  <span class="pl-s1">args</span>
+<span class="pl-k">end</span>
+
+<span class="pl-en">splat_arguments</span><span class="pl-kos">(</span><span class="pl-pds">:linux</span><span class="pl-kos">,</span> <span class="pl-s">"ms"</span><span class="pl-kos">,</span> <span class="pl-v">String</span><span class="pl-kos">)</span>
+<span class="pl-c1">=&gt;</span> <span class="pl-kos">[</span><span class="pl-pds">:linux</span><span class="pl-kos">,</span> <span class="pl-s">"ms"</span><span class="pl-kos">,</span> <span class="pl-v">String</span><span class="pl-kos">]</span>
+
+<span class="pl-en">splat_arguments</span><span class="pl-kos">(</span><span class="pl-pds">linux</span>: <span class="pl-pds">:cool</span><span class="pl-kos">,</span> <span class="pl-pds">arch</span>: <span class="pl-pds">:very_cool</span><span class="pl-kos">)</span>
+<span class="pl-c1">=&gt;</span> <span class="pl-kos">[</span><span class="pl-kos">{</span><span class="pl-pds">:linux</span><span class="pl-c1">=&gt;</span><span class="pl-pds">:cool</span><span class="pl-kos">,</span> <span class="pl-pds">:arch</span><span class="pl-c1">=&gt;</span><span class="pl-pds">:very_cool</span><span class="pl-kos">}</span><span class="pl-kos">]</span>
+
+<span class="pl-k">def</span> <span class="pl-en">splat_more_arguments</span><span class="pl-kos">(</span><span class="pl-s1">a</span><span class="pl-kos">,</span> *<span class="pl-s1">args</span><span class="pl-kos">,</span> <span class="pl-s1">c</span><span class="pl-kos">)</span>
+  <span class="pl-en">puts</span> <span class="pl-s">"a <span class="pl-s1"><span class="pl-kos">#{</span><span class="pl-s1">a</span><span class="pl-kos">}</span></span> ; args <span class="pl-s1"><span class="pl-kos">#{</span><span class="pl-s1">args</span><span class="pl-kos">}</span></span> ; c <span class="pl-s1"><span class="pl-kos">#{</span><span class="pl-s1">c</span><span class="pl-kos">}</span></span>"</span>
+<span class="pl-k">end</span>
+
+<span class="pl-en">splat_more_arguments</span><span class="pl-kos">(</span><span class="pl-pds">:archlinux</span><span class="pl-kos">,</span> <span class="pl-pds">:elementaryos</span><span class="pl-kos">,</span> <span class="pl-pds">:gentoo</span><span class="pl-kos">,</span> <span class="pl-pds">:ubuntu</span><span class="pl-kos">,</span> <span class="pl-pds">:centos</span><span class="pl-kos">)</span>
+<span class="pl-c"># a: archlinux ; args: [:elementaryos, :gentoo, :ubuntu] ; c: centos</span>
+
+<span class="pl-en">splat_more_arguments</span><span class="pl-kos">(</span><span class="pl-pds">:archlinux</span><span class="pl-kos">,</span> <span class="pl-pds">:centos</span><span class="pl-kos">)</span>
+<span class="pl-c"># a: archlinux ; args: [] ; c centos</span>
+
+<span class="pl-en">splat_more_arguments</span><span class="pl-kos">(</span><span class="pl-pds">:archlinux</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-pds">:elementaryos</span><span class="pl-kos">,</span> <span class="pl-pds">:gentoo</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-pds">:ubuntu</span><span class="pl-kos">,</span> <span class="pl-pds">:centos</span><span class="pl-kos">)</span>
+<span class="pl-c"># a: archlinux ; args: [[:elementaryos, :gentoo], :ubuntu] ; c: centos</span>
+
+<span class="pl-en">splat_more_arguments</span><span class="pl-kos">(</span><span class="pl-pds">:archlinux</span><span class="pl-kos">)</span>
+<span class="pl-c"># ArgumentError: wrong number of arguments (given 1, expected 2+)</span>
+
+<span class="pl-k">def</span> <span class="pl-en">anonymous_splat_arguments</span><span class="pl-kos">(</span><span class="pl-s1">first</span><span class="pl-kos">,</span> *<span class="pl-kos">,</span> <span class="pl-s1">last</span><span class="pl-kos">)</span>
+  <span class="pl-kos">[</span><span class="pl-s1">first</span><span class="pl-kos">,</span> <span class="pl-s1">last</span><span class="pl-kos">]</span>
+<span class="pl-k">end</span>
+
+<span class="pl-en">anonymous_splat_arguments</span><span class="pl-kos">(</span><span class="pl-pds">:archlinux</span><span class="pl-kos">,</span> <span class="pl-pds">:elementaryos</span><span class="pl-kos">,</span> <span class="pl-pds">:gentoo</span><span class="pl-kos">,</span> <span class="pl-pds">:ubuntu</span><span class="pl-kos">,</span> <span class="pl-pds">:centos</span><span class="pl-kos">)</span>
+<span class="pl-c1">=&gt;</span> <span class="pl-kos">[</span><span class="pl-pds">:archlinux</span><span class="pl-kos">,</span> <span class="pl-pds">:centos</span><span class="pl-kos">]</span>
+
+<span class="pl-c"># Other interesting use, we can define a method to inspect a method this way, </span>
+<span class="pl-c"># by passing along the arguments and making print statements before and after </span>
+<span class="pl-c"># making the actual call</span>
+<span class="pl-k">def</span> <span class="pl-en">inspected_method</span><span class="pl-kos">(</span>*<span class="pl-kos">)</span>
+  <span class="pl-en">puts</span> <span class="pl-s">"before calling inspected_method"</span>
+  <span class="pl-smi">super</span>
+  <span class="pl-en">puts</span> <span class="pl-s">"after calling inspected_method"</span>
+<span class="pl-k">end</span></pre></div>
+<p><strong>Ruby splat can be used to pass parameters from an array:</strong></p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">def</span> <span class="pl-en">splat_parameters</span><span class="pl-kos">(</span><span class="pl-s1">a</span><span class="pl-kos">,</span> <span class="pl-s1">b</span><span class="pl-kos">,</span> <span class="pl-s1">c</span><span class="pl-kos">)</span>
+  <span class="pl-en">puts</span> <span class="pl-s">"a: <span class="pl-s1"><span class="pl-kos">#{</span><span class="pl-s1">a</span><span class="pl-kos">}</span></span> ; b: <span class="pl-s1"><span class="pl-kos">#{</span><span class="pl-s1">b</span><span class="pl-kos">}</span></span> ; c: <span class="pl-s1"><span class="pl-kos">#{</span><span class="pl-s1">c</span><span class="pl-kos">}</span></span> "</span>
+<span class="pl-k">end</span>
+
+<span class="pl-s1">distros</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span><span class="pl-pds">:archlinux</span><span class="pl-kos">,</span> <span class="pl-pds">:debian</span><span class="pl-kos">,</span> <span class="pl-pds">:redhat</span><span class="pl-kos">]</span>
+
+<span class="pl-en">splat_parameters</span><span class="pl-kos">(</span><span class="pl-s1">distros</span><span class="pl-kos">[</span><span class="pl-c1">0</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-s1">distros</span><span class="pl-kos">[</span><span class="pl-c1">1</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-s1">distros</span><span class="pl-kos">[</span><span class="pl-c1">2</span><span class="pl-kos">]</span><span class="pl-kos">)</span>
+<span class="pl-c"># a: archlinux ; b: debian ; c: redhat</span>
+
+<span class="pl-c"># Equivalent but easier to write</span>
+<span class="pl-en">splat_parameters</span><span class="pl-kos">(</span>*<span class="pl-s1">distros</span><span class="pl-kos">)</span>
+<span class="pl-c"># a: archlinux ; b: debian ; c: redhat</span>
+
+<span class="pl-en">splat_parameters</span><span class="pl-kos">(</span><span class="pl-pds">:archlinux</span><span class="pl-kos">,</span> *<span class="pl-kos">[</span><span class="pl-pds">:debian</span><span class="pl-kos">,</span> <span class="pl-pds">:redhat</span><span class="pl-kos">]</span><span class="pl-kos">)</span>
+<span class="pl-c"># a: archlinux ; b: debian ; c: redhat</span>
+<span class="pl-c"># Note: number of arguments must match, otherwise we get ArgumentError</span></pre></div>
+<p><strong>Ruby splat can be used to destructure an array:</strong></p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-s1">distros</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span><span class="pl-pds">:archlinux</span><span class="pl-kos">,</span> <span class="pl-pds">:elementaryos</span><span class="pl-kos">,</span> <span class="pl-pds">:gentoo</span><span class="pl-kos">,</span> <span class="pl-pds">:centos</span><span class="pl-kos">,</span> <span class="pl-pds">:ubuntu</span><span class="pl-kos">]</span>
+<span class="pl-s1">best</span><span class="pl-kos">,</span> *<span class="pl-s1">rest</span><span class="pl-kos">,</span> <span class="pl-s1">last</span> <span class="pl-c1">=</span> <span class="pl-s1">distros</span>
+<span class="pl-en">puts</span> <span class="pl-s">"best: <span class="pl-s1"><span class="pl-kos">#{</span><span class="pl-s1">best</span><span class="pl-kos">}</span></span> ; rest: <span class="pl-s1"><span class="pl-kos">#{</span><span class="pl-s1">rest</span><span class="pl-kos">}</span></span> ; last: <span class="pl-s1"><span class="pl-kos">#{</span><span class="pl-s1">last</span><span class="pl-kos">}</span></span>"</span>
+<span class="pl-c"># first: archlinux ; rest: [:elementaryos, :gentoo, :centos] ; last: ubuntu</span></pre></div>
+<p><strong>Splat to flatten an array</strong></p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-s1">distros</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span><span class="pl-pds">:archlinux</span><span class="pl-kos">,</span> <span class="pl-pds">:elementaryos</span><span class="pl-kos">,</span> <span class="pl-pds">:gentoo</span><span class="pl-kos">,</span> <span class="pl-pds">:centos</span><span class="pl-kos">,</span> <span class="pl-pds">:ubuntu</span><span class="pl-kos">]</span>
+<span class="pl-s1">more_distros</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span><span class="pl-pds">:debian</span><span class="pl-kos">,</span> *<span class="pl-s1">distros</span><span class="pl-kos">,</span> <span class="pl-pds">:fedora</span><span class="pl-kos">]</span>
+<span class="pl-c1">=&gt;</span> <span class="pl-kos">[</span><span class="pl-pds">:debian</span><span class="pl-kos">,</span> <span class="pl-pds">:archlinux</span><span class="pl-kos">,</span> <span class="pl-pds">:elementaryos</span><span class="pl-kos">,</span> <span class="pl-pds">:gentoo</span><span class="pl-kos">,</span> <span class="pl-pds">:centos</span><span class="pl-kos">,</span> <span class="pl-pds">:ubuntu</span><span class="pl-kos">,</span> <span class="pl-pds">:fedora</span><span class="pl-kos">]</span>
+<span class="pl-s1">more_distros</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span><span class="pl-pds">:debian</span><span class="pl-kos">,</span> *<span class="pl-s1">distros</span><span class="pl-kos">,</span> <span class="pl-pds">:fedora</span><span class="pl-kos">]</span>
+<span class="pl-c1">=&gt;</span> <span class="pl-kos">[</span><span class="pl-pds">:debian</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-pds">:archlinux</span><span class="pl-kos">,</span> <span class="pl-pds">:elementaryos</span><span class="pl-kos">,</span> <span class="pl-pds">:gentoo</span><span class="pl-kos">,</span> <span class="pl-pds">:centos</span><span class="pl-kos">,</span> <span class="pl-pds">:ubuntu</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-pds">:fedora</span><span class="pl-kos">]</span></pre></div>
+<p><strong>Splat can replace the Array() method:</strong></p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-en">Array</span><span class="pl-kos">(</span><span class="pl-s">"string"</span><span class="pl-kos">)</span>
+<span class="pl-c1">=&gt;</span> <span class="pl-kos">[</span><span class="pl-s">"string"</span><span class="pl-kos">]</span>
+
+<span class="pl-s1">wrap</span> <span class="pl-c1">=</span> *<span class="pl-s">"string"</span>
+<span class="pl-c1">=&gt;</span> <span class="pl-kos">[</span><span class="pl-s">"string"</span><span class="pl-kos">]</span>
+
+<span class="pl-s1">wrap</span> <span class="pl-c1">=</span> *<span class="pl-c1">1</span>
+<span class="pl-c1">=&gt;</span> <span class="pl-kos">[</span><span class="pl-c1">1</span><span class="pl-kos">]</span></pre></div>
+<p><strong>Constructing arrays</strong></p>
+<pre><code>[*[1,2], *[3,4]]
+=&gt; [1, 2, 3, 4]
+</code></pre>
+<p>It can even intelligently coerce objects into arrays.</p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-c"># Usually `*thing` wraps `thing` in an array</span>
+<span class="pl-s1">x</span> <span class="pl-c1">=</span> *<span class="pl-s">"hi mom"</span>
+<span class="pl-c"># =&gt; ["hi mom"]</span>
+
+<span class="pl-c"># ...unless it's nil</span>
+<span class="pl-s1">x</span> <span class="pl-c1">=</span> *<span class="pl-c1">nil</span>
+<span class="pl-c"># =&gt; []</span>
+
+<span class="pl-c"># Arrays are passed through unchanged</span>
+<span class="pl-s1">x</span> <span class="pl-c1">=</span> *<span class="pl-kos">[</span><span class="pl-c1">1</span><span class="pl-kos">,</span><span class="pl-c1">2</span><span class="pl-kos">,</span><span class="pl-c1">3</span><span class="pl-kos">]</span>
+<span class="pl-c"># =&gt; [1, 2, 3]</span>
+
+<span class="pl-c"># But hashes are converted to arrays</span>
+<span class="pl-s1">x</span> <span class="pl-c1">=</span> *<span class="pl-kos">{</span><span class="pl-pds">a</span>: <span class="pl-c1">1</span><span class="pl-kos">}</span>
+<span class="pl-c"># =&gt; [[:a, 1]]</span></pre></div>
+<p>This gives us a tool for building arrays without having to do a ton of manual type coercion.<br>
+For example, imagine you're collecting an array of strings for some <strong>configuration system.</strong><br>
+Normally you'd want to:</p>
+<ol>
+<li>Check if the array exists, and initialize it if not</li>
+<li>Respond intelligently if someone tries to add an array of strings, not just a single string</li>
+</ol>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-c"># Your configuration hash may or may not have</span>
+<span class="pl-c"># an existing :ignore array. </span>
+<span class="pl-s1">config</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span> <span class="pl-kos">}</span>
+
+<span class="pl-c"># The callback function might return an array</span>
+<span class="pl-c"># or it might return a single item. </span>
+
+<span class="pl-k">def</span> <span class="pl-en">add_ignores</span>
+  <span class="pl-s">"scoundrels"</span> <span class="pl-c"># could also be an array like ["scoundrels", "cads", "ne'er-do-wells"]</span>
+<span class="pl-k">end</span>
+
+<span class="pl-c"># This is where the magic happens. No matter what you </span>
+<span class="pl-c"># start with you get an array of things to ignore. </span>
+<span class="pl-s1">config</span><span class="pl-kos">[</span><span class="pl-pds">:ignore</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span>*<span class="pl-s1">config</span><span class="pl-kos">[</span><span class="pl-pds">:ignore</span><span class="pl-kos">]</span><span class="pl-kos">,</span> *<span class="pl-en">add_ignores</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">]</span>
+
+<span class="pl-kos">[</span><span class="pl-c1">152</span><span class="pl-kos">]</span><span class="pl-kos"></span> <span class="pl-en">pry</span><span class="pl-kos">(</span><span class="pl-en">main</span><span class="pl-kos">)</span>&gt; <span class="pl-s1">config</span><span class="pl-kos">[</span><span class="pl-pds">:ignore</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span>*<span class="pl-s1">config</span><span class="pl-kos">[</span><span class="pl-pds">:ignore</span><span class="pl-kos">]</span><span class="pl-kos">,</span> *<span class="pl-en">add_ignores</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">]</span>
+<span class="pl-c1">=&gt;</span> <span class="pl-kos">[</span><span class="pl-s">"scoundrels"</span><span class="pl-kos">]</span>
+<span class="pl-kos">[</span><span class="pl-c1">153</span><span class="pl-kos">]</span><span class="pl-kos"></span> <span class="pl-en">pry</span><span class="pl-kos">(</span><span class="pl-en">main</span><span class="pl-kos">)</span>&gt; <span class="pl-s1">config</span><span class="pl-kos">[</span><span class="pl-pds">:ignore</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span>*<span class="pl-s1">config</span><span class="pl-kos">[</span><span class="pl-pds">:ignore</span><span class="pl-kos">]</span><span class="pl-kos">,</span> *<span class="pl-en">add_ignores</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">]</span>
+<span class="pl-c1">=&gt;</span> <span class="pl-kos">[</span><span class="pl-s">"scoundrels"</span><span class="pl-kos">,</span> <span class="pl-s">"scoundrels"</span><span class="pl-kos">]</span>
+<span class="pl-kos">[</span><span class="pl-c1">154</span><span class="pl-kos">]</span><span class="pl-kos"></span> <span class="pl-en">pry</span><span class="pl-kos">(</span><span class="pl-en">main</span><span class="pl-kos">)</span>&gt; <span class="pl-s1">config</span><span class="pl-kos">[</span><span class="pl-pds">:ignore</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span>*<span class="pl-s1">config</span><span class="pl-kos">[</span><span class="pl-pds">:ignore</span><span class="pl-kos">]</span><span class="pl-kos">,</span> *<span class="pl-en">add_ignores</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">]</span>
+<span class="pl-c1">=&gt;</span> <span class="pl-kos">[</span><span class="pl-s">"scoundrels"</span><span class="pl-kos">,</span> <span class="pl-s">"scoundrels"</span><span class="pl-kos">,</span> <span class="pl-s">"scoundrels"</span><span class="pl-kos">]</span>
+<span class="pl-kos">[</span><span class="pl-c1">155</span><span class="pl-kos">]</span><span class="pl-kos"></span> <span class="pl-en">pry</span><span class="pl-kos">(</span><span class="pl-en">main</span><span class="pl-kos">)</span>&gt; <span class="pl-s1">config</span><span class="pl-kos">[</span><span class="pl-pds">:ignore</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span>*<span class="pl-s1">config</span><span class="pl-kos">[</span><span class="pl-pds">:ignore</span><span class="pl-kos">]</span><span class="pl-kos">,</span> *<span class="pl-kos">[</span><span class="pl-s">"cads"</span><span class="pl-kos">,</span><span class="pl-s">"never-do-wells"</span><span class="pl-kos">]</span><span class="pl-kos">]</span>
+<span class="pl-c1">=&gt;</span> <span class="pl-kos">[</span><span class="pl-s">"scoundrels"</span><span class="pl-kos">,</span> <span class="pl-s">"scoundrels"</span><span class="pl-kos">,</span> <span class="pl-s">"scoundrels"</span><span class="pl-kos">,</span> <span class="pl-s">"cads"</span><span class="pl-kos">,</span> <span class="pl-s">"never-do-wells"</span><span class="pl-kos">]</span>
+<span class="pl-kos">[</span><span class="pl-c1">156</span><span class="pl-kos">]</span><span class="pl-kos"></span> <span class="pl-en">pry</span><span class="pl-kos">(</span><span class="pl-en">main</span><span class="pl-kos">)</span>&gt; <span class="pl-s1">config</span><span class="pl-kos">[</span><span class="pl-pds">:ignore</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span>*<span class="pl-s1">config</span><span class="pl-kos">[</span><span class="pl-pds">:ignore</span><span class="pl-kos">]</span><span class="pl-kos">,</span> *<span class="pl-kos">[</span><span class="pl-s">"cads"</span><span class="pl-kos">,</span><span class="pl-s">"never-do-wells"</span><span class="pl-kos">]</span><span class="pl-kos">]</span>
+<span class="pl-c1">=&gt;</span> <span class="pl-kos">[</span><span class="pl-s">"scoundrels"</span><span class="pl-kos">,</span> <span class="pl-s">"scoundrels"</span><span class="pl-kos">,</span> <span class="pl-s">"scoundrels"</span><span class="pl-kos">,</span> <span class="pl-s">"cads"</span><span class="pl-kos">,</span> <span class="pl-s">"never-do-wells"</span><span class="pl-kos">,</span> <span class="pl-s">"cads"</span><span class="pl-kos">,</span> <span class="pl-s">"never-do-wells"</span><span class="pl-kos">]</span></pre></div>
+<p><strong>Splat can convert an array into a Hash</strong><br>
+Your Array needs to contain an even number of elements for this to work. If the Array were grouped into pairs, the first element in each pair will become a key in your Hash, and the second element of the pair will be the corresponding value.</p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-s1">arr</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span><span class="pl-pds">:foo</span><span class="pl-kos">,</span> <span class="pl-c1">1</span><span class="pl-kos">,</span> <span class="pl-pds">:bar</span><span class="pl-kos">,</span> <span class="pl-c1">2</span><span class="pl-kos">,</span> <span class="pl-pds">:baz</span><span class="pl-kos">,</span> <span class="pl-c1">3</span><span class="pl-kos">]</span>
+<span class="pl-v">Hash</span><span class="pl-kos">[</span>*<span class="pl-s1">arr</span><span class="pl-kos">]</span>
+<span class="pl-c"># { foo: 1, bar: 2, baz: 3 }</span></pre></div>
+<p><strong>Double Splat collects hashes as opposed to arrays</strong></p>
+<ul>
+<li>Ruby 2.0 introduced keyword arguments, and splat argument works with them. Splat argument always creates an Array, and all unmatched keyword arguments will be collected in a Hash that will be the last element of that array.</li>
+</ul>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">def</span> <span class="pl-en">splat_test</span><span class="pl-kos">(</span>*<span class="pl-s1">args</span><span class="pl-kos">)</span>
+  <span class="pl-s1">args</span>
+<span class="pl-k">end</span>
+
+<span class="pl-en">splat_test</span><span class="pl-kos">(</span><span class="pl-s">'positional'</span><span class="pl-kos">)</span>
+<span class="pl-c"># =&gt; ['positional']</span>
+
+<span class="pl-en">splat_test</span><span class="pl-kos">(</span><span class="pl-s">'positional'</span><span class="pl-kos">,</span> <span class="pl-pds">foo</span>: <span class="pl-s">'bar'</span><span class="pl-kos">)</span>
+<span class="pl-c"># =&gt; ['positional', {:foo=&gt;"bar"}]</span>
+
+<span class="pl-en">splat_test</span><span class="pl-kos">(</span><span class="pl-pds">foo</span>: <span class="pl-s">'bar'</span><span class="pl-kos">)</span>
+<span class="pl-c"># =&gt; [{:foo=&gt;"bar"}]</span></pre></div>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-c">#The double splat is most often used for keyword argument syntax, so catch all parameters</span>
+<span class="pl-k">def</span> <span class="pl-en">go</span><span class="pl-kos">(</span>**<span class="pl-s1">params</span><span class="pl-kos">)</span>
+  <span class="pl-en">puts</span> <span class="pl-s1">params</span><span class="pl-kos">.</span><span class="pl-en">inspect</span>
+<span class="pl-k">end</span>
+
+<span class="pl-c"># =&gt; go(x: 100, y: 200)</span>
+<span class="pl-c"># {:x=&gt;100, :y=&gt;200}</span></pre></div>
+<p><strong>Another Example Set</strong></p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-en">my_method</span><span class="pl-kos">(</span><span class="pl-s">'Go'</span><span class="pl-kos">,</span> <span class="pl-s">'Now'</span><span class="pl-kos">,</span> <span class="pl-pds">name</span>: <span class="pl-s">'John Goblikon'</span><span class="pl-kos">)</span></pre></div>
+<p>Example 1</p>
+<p>The first method is ok and it will collect all arguments into an Array, with named arguments stored as a Hash.</p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">def</span> <span class="pl-en">my_method</span><span class="pl-kos">(</span>*<span class="pl-s1">args</span><span class="pl-kos">)</span>
+<span class="pl-c"># args =&gt; ['Go', 'Now', {name: 'John Goblikon'}]</span><span class="pl-k"></span></pre></div>
+<p>Example 2</p>
+<p>The second example is invalid, we are only collecting named arguments while two positional arguments are passed to the method. We will get an ArgumentError.</p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">def</span> <span class="pl-en">my_method</span><span class="pl-kos">(</span>**<span class="pl-s1">args</span><span class="pl-kos">)</span>
+<span class="pl-c"># wrong number of arguments (2 for 0) (ArgumentError)</span><span class="pl-k"></span></pre></div>
+<p>Example 3</p>
+<p>The third example is again valid. This time the single splat argument will collect only positional arguments, while the double splat will collect the named arguments.</p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">def</span> <span class="pl-en">my_method</span><span class="pl-kos">(</span>*<span class="pl-s1">args1</span><span class="pl-kos">,</span> **<span class="pl-s1">args2</span><span class="pl-kos">)</span>
+<span class="pl-c"># args1 =&gt; ['Go', 'Now']</span>
+<span class="pl-c"># args2 =&gt; {name: 'John Goblikon'}</span><span class="pl-k"></span></pre></div>
+<hr>
+<h1>
+<a id="user-content-problems--sample-code" class="anchor" href="#problems--sample-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Problems / Sample Code</h1>
+<p><strong>Implement the function longestSequence(sequence)</strong>
+which takes a string of letters and finds the longest sequence where the same letter occurs continuously.</p>
+<p>The function must return an object literal {c: n} where c is the lowercase character and n is the length of this sub-sequence.</p>
+<p>If there are multiple characters with a continuous sequence of the same length, return the information for the letter which occurs first alphabetically.</p>
+<p>Example outputs:</p>
+<p>longest_sequence( "dghhhmhmx" ) === {h: 3}</p>
+<p>longest_sequence( "dhkkhhKKKt" ) === {k: 3}</p>
+<p>longest_sequence( "aBbBadddadd" ) === {b: 3}</p>
+<p><strong>Reverse an Array without using <code>.reverse</code> or a second data structure</strong><br>
+The part about not using a second data structure hints at having to do it recursively.
+and not using the reverse method leaves us to use pointers.</p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-s1">array</span><span class="pl-c1">=</span><span class="pl-kos">[</span><span class="pl-c1">1</span><span class="pl-kos">,</span><span class="pl-c1">2</span><span class="pl-kos">,</span><span class="pl-c1">3</span><span class="pl-kos">,</span><span class="pl-c1">4</span><span class="pl-kos">,</span><span class="pl-c1">5</span><span class="pl-kos">]</span>
+
+<span class="pl-k">def</span> <span class="pl-en">reverse_array</span><span class="pl-kos">(</span><span class="pl-s1">array</span><span class="pl-kos">,</span> <span class="pl-s1">start_index</span><span class="pl-c1">=</span><span class="pl-c1">0</span><span class="pl-kos">,</span> <span class="pl-s1">end_index</span><span class="pl-c1">=</span><span class="pl-s1">array</span><span class="pl-kos">.</span><span class="pl-en">length</span>-<span class="pl-c1">1</span><span class="pl-kos">)</span>
+    <span class="pl-k">if</span> <span class="pl-s1">start_index</span> &gt;= <span class="pl-s1">end_index</span>
+        <span class="pl-k">return</span> <span class="pl-s1">array</span>
+    <span class="pl-k">end</span>
+    <span class="pl-s1">array</span><span class="pl-kos">[</span><span class="pl-s1">start_index</span><span class="pl-kos">]</span><span class="pl-kos">,</span><span class="pl-s1">array</span><span class="pl-kos">[</span><span class="pl-s1">end_index</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-s1">array</span><span class="pl-kos">[</span><span class="pl-s1">end_index</span><span class="pl-kos">]</span><span class="pl-kos">,</span><span class="pl-s1">array</span><span class="pl-kos">[</span><span class="pl-s1">start_index</span><span class="pl-kos">]</span>
+    <span class="pl-en">reverse_array</span><span class="pl-kos">(</span><span class="pl-s1">array</span><span class="pl-kos">,</span> <span class="pl-s1">start_index</span>+<span class="pl-c1">1</span><span class="pl-kos">,</span> <span class="pl-s1">end_index</span>-<span class="pl-c1">1</span><span class="pl-kos">)</span>
+<span class="pl-k">end</span>
+
+<span class="pl-k">def</span> <span class="pl-en">reverse_array</span><span class="pl-kos">(</span><span class="pl-s1">array</span><span class="pl-kos">)</span>
+    <span class="pl-s1">start</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>
+    <span class="pl-s1">end_index</span> <span class="pl-c1">=</span> <span class="pl-s1">array</span><span class="pl-kos">.</span><span class="pl-en">length</span>-<span class="pl-c1">1</span>
+
+    <span class="pl-k">while</span> <span class="pl-s1">start</span> &lt;= <span class="pl-s1">end_index</span>
+        <span class="pl-en">p</span> <span class="pl-s1">temp</span> <span class="pl-c1">=</span> <span class="pl-s1">array</span><span class="pl-kos">[</span><span class="pl-s1">start</span><span class="pl-kos">]</span>
+        <span class="pl-en">p</span> <span class="pl-s1">array</span><span class="pl-kos">[</span><span class="pl-s1">start</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-s1">array</span><span class="pl-kos">[</span><span class="pl-s1">end_index</span><span class="pl-kos">]</span>
+        <span class="pl-en">p</span> <span class="pl-s1">array</span><span class="pl-kos">[</span><span class="pl-s1">end_index</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-s1">temp</span>
+
+        <span class="pl-s1">start</span> += <span class="pl-c1">1</span>
+        <span class="pl-s1">end_index</span> -= <span class="pl-c1">1</span>
+    <span class="pl-k">end</span>
+    <span class="pl-s1">array</span>
+<span class="pl-k">end</span></pre></div>
+<p><strong>Build a randomized array</strong></p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-en">random_array</span><span class="pl-kos">(</span><span class="pl-c1">2</span><span class="pl-kos">,</span><span class="pl-c1">5</span><span class="pl-kos">)</span>
+
+<span class="pl-c">#one liner using shuffle</span>
+<span class="pl-k">def</span> <span class="pl-en">random_array</span><span class="pl-kos">(</span><span class="pl-s1">first</span><span class="pl-kos">,</span><span class="pl-s1">last</span><span class="pl-kos">)</span>
+    <span class="pl-kos">[</span>*<span class="pl-kos">(</span><span class="pl-s1">first</span>..<span class="pl-s1">last</span><span class="pl-kos">)</span><span class="pl-kos">]</span><span class="pl-kos">.</span><span class="pl-en">shuffle</span>
+<span class="pl-k">end</span>
+
+<span class="pl-c">#using sample to randomize</span>
+<span class="pl-k">def</span> <span class="pl-en">random_array</span><span class="pl-kos">(</span><span class="pl-s1">first</span><span class="pl-kos">.</span><span class="pl-en">last</span><span class="pl-kos">)</span>
+    <span class="pl-s1">arr</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-s1">first</span>..<span class="pl-en">last</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">to_a</span> <span class="pl-c">#could also arr = *(first..last)</span>
+    <span class="pl-s1">arr</span><span class="pl-kos">.</span><span class="pl-en">sample</span><span class="pl-kos">(</span><span class="pl-en">array</span><span class="pl-kos">.</span><span class="pl-en">length</span><span class="pl-kos">)</span>
+<span class="pl-k">end</span>
+
+<span class="pl-c">#using a random number to shuffle the array</span>
+<span class="pl-k">def</span> <span class="pl-en">random_array</span><span class="pl-kos">(</span><span class="pl-s1">first</span><span class="pl-kos">,</span><span class="pl-s1">last</span><span class="pl-kos">)</span>
+    <span class="pl-s1">arr</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-s1">first</span>..<span class="pl-s1">last</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">to_a</span> <span class="pl-c">#could also arr = *(first..last)</span>
+    <span class="pl-s1">delta</span> <span class="pl-c1">=</span> <span class="pl-en">rand</span><span class="pl-kos">(</span><span class="pl-c1">0</span>..<span class="pl-s1">arr</span><span class="pl-kos">.</span><span class="pl-en">length</span>-<span class="pl-c1">1</span><span class="pl-kos">)</span>
+    <span class="pl-en">puts</span> <span class="pl-s1">delta</span>
+    <span class="pl-s1">temp</span> <span class="pl-c1">=</span> <span class="pl-s1">arr</span><span class="pl-kos">[</span><span class="pl-s1">delta</span><span class="pl-kos">]</span>
+    <span class="pl-s1">arr</span><span class="pl-kos">[</span><span class="pl-s1">delta</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-s1">arr</span><span class="pl-kos">[</span><span class="pl-c1">0</span><span class="pl-kos">]</span>
+    <span class="pl-s1">arr</span><span class="pl-kos">[</span><span class="pl-c1">0</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-s1">temp</span>
+    <span class="pl-s1">arr</span>
+<span class="pl-k">end</span></pre></div>
+<p><strong>Recursive Factorial</strong></p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">def</span> <span class="pl-en">factorial</span><span class="pl-kos">(</span><span class="pl-s1">n</span><span class="pl-kos">)</span>
+  <span class="pl-s1">n</span> == <span class="pl-c1">0</span> ? <span class="pl-c1">1</span> : <span class="pl-s1">n</span> * <span class="pl-en">factorial</span><span class="pl-kos">(</span><span class="pl-s1">n</span>-<span class="pl-c1">1</span><span class="pl-kos">)</span>
+<span class="pl-k">end</span></pre></div>
+<p><strong>How many different ways can the letters in the word “document” be arranged?</strong></p>
+<blockquote>
+<p>For this problem we simply take the number of letters in the word and find the factorial of that number. This works because each letter in the word is unique and we are simply finding the maximum amount of ways 8 items can be ordered.</p>
+</blockquote>
+<blockquote>
+<p>8!=8<em>7</em>6<em>5</em>4<em>3</em>2*1= 40,320</p>
+</blockquote>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-c">#TODO: Write ruby function that will take a string and find all the way it can be arranged</span></pre></div>
+<p><strong>Given an array of integers find the sub array having maximum sum (Maximum subarray problem)</strong></p>
+<pre><code>def max_slice (array)
+  max_so_far = 0     
+  max_ending_here = 0 
+   Loop for each element of the array   
+      (a) max_ending_here = max_ending_here + a[i]   
+      (b) if(max_ending_here &lt; 0)             
+                max_ending_here = 0  
+      (c) if(max_so_far &lt; max_ending_here)             
+               max_so_far = max_ending_here 
+  return max_so_far
+end
+</code></pre>
+<p>cases: [1,2,3,4,5] [1,-2,5,6,0,1,-50] [-10,-15,-100] []</p>
+<p><strong>largest sum of any contiguous subarray</strong></p>
+<pre><code>def max_sum_subarray(numbers)
+  if numbers is empty
+    return null
+
+  max_sum = float('-inf')
+  max_subarray_ending_here = 0
+
+  for x in numbers
+    #can we extend the window ending at the previous element by including this element? if so extend it. else start a new window with only this element
+    max_subarray_ending_here = max(x, max_subarray_ending_here + x)
+
+    #is the window we just extended the best we've found? make that the max sum. by the end it will ontain the maximum sum.
+    max_sum = max(max_sum, max_subarray_ending_here)
+  end
+  return max_sum
+end
+</code></pre>
+<p><strong>contiguous subarray with largest sum</strong></p>
+<pre><code>def max_subarray(numbers)
+  max_sum = 0 # or float('-inf')
+  max_start = max_end = 0 # or none
+  current_sum = 0
+  for current_end, x in numbers
+    if current_sum &lt;= 0
+      #start a new sequence at this current element
+      curent_start = current_end 
+      current_sum = x
+    else
+      #extend the existing sequence with the current element
+      current_sum += x
+
+    if current_sum &gt; max_sum
+      max_sum = current_sum
+      max_start = current_start
+      max_end = current_end # + 1 for python since arrays have an end index that excludes
+  return max_sum,max_start,max_end
+end
+</code></pre>
+<h1>
+<a id="user-content-notes" class="anchor" href="#notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notes</h1>
+<h5>
+<a id="user-content-how-to-approach-leetcode-problems--programming-problems--" class="anchor" href="#how-to-approach-leetcode-problems--programming-problems--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to approach LeetCode problems / programming problems -</h5>
+<ol>
+<li>identify edge cases &amp; cases that represent most inputs</li>
+<li>identify way that the problem is composed of smaller problems</li>
+</ol>
+<p><strong>My favorite way to learn Ruby and Rails</strong></p>
+<ul>
+<li>Pry session - Pry is a REPL (read-evaluate-print-loop) runtime that is an alternative to IRB.
+It alows for source code browsing, documentation browsing, opening methods in editors, syntax highlighting, command shell integration, gist integration to print, debugger, powerful comman system,</li>
+</ul>
+<h1>
+<a id="user-content-ebmud-questions" class="anchor" href="#ebmud-questions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>EBMUD Questions</h1>
+<ol>
+<li>
+<p><strong>Calculate the area of a large rectangle minus another rectangle</strong></p>
+</li>
+<li>
+<p><strong>Draw the associations for a tree with many branches, and also for a house that can have multiple owners or tenants.</strong></p>
+</li>
+</ol>
+<p>Tree - id, tree_type, height
+Branch - id, height, tree_id</p>
+<p>House with multiple owners and multiple tennants, owners have one house
+House - id, number, street
+Homeowner - id, house_id
+Tennant - id, house_id</p>
+<p>House with multiple owners that could own multiple houses, multiple tennants, owners have multiple tennants also
+House - id, number, street
+Homeowner - id, name
+HomeownerHouse - house_id, homeowner_id
+Tennant - id, house_id</p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">class</span> <span class="pl-v">Owner</span> &lt; <span class="pl-v">ActiveRecord</span>::<span class="pl-v">Base</span>
+  <span class="pl-en">has_and_belongs_to_many</span> <span class="pl-pds">:houses</span>
+  <span class="pl-en">has_many</span> <span class="pl-pds">:tennants</span><span class="pl-kos">,</span> <span class="pl-pds">through</span>: <span class="pl-pds">:houses</span>
+<span class="pl-k">end</span>
+
+<span class="pl-k">class</span> <span class="pl-v">House</span> &lt; <span class="pl-v">ActiveRecord</span>::<span class="pl-v">Base</span>
+  <span class="pl-en">has_many</span> <span class="pl-pds">:tennants</span>
+  <span class="pl-en">has_and_belongs_to_many</span> <span class="pl-pds">:owners</span>
+<span class="pl-k">end</span>
+
+<span class="pl-k">class</span> <span class="pl-v">Tennant</span> &lt; <span class="pl-v">ActiveRecord</span>::<span class="pl-v">Base</span>
+  <span class="pl-en">belongs_to</span> <span class="pl-pds">:house</span>
+<span class="pl-k">end</span></pre></div>
+<ol start="3">
+<li><strong>Sql command to get back a list of homeowners that were affected by a fire. 4 tables, Fire (fried, propertyid, firedate), Properties (propertyid, ownerid, address), Owners(ownerid, name, address), Taxroll(propertyid, last cost, housecost)</strong></li>
+</ol>
+<div class="highlight highlight-source-sql"><pre><span class="pl-k">SELECT</span> <span class="pl-c1">owner</span>.<span class="pl-c1">name</span>, <span class="pl-c1">owner</span>.<span class="pl-c1">address</span>, <span class="pl-c1">fire</span>.<span class="pl-c1">fire_date</span>
+<span class="pl-k">FROM</span> owner
+<span class="pl-k">INNER JOIN</span> property <span class="pl-k">ON</span> <span class="pl-c1">property</span>.<span class="pl-c1">owner_id</span> <span class="pl-k">=</span> <span class="pl-c1">owner</span>.<span class="pl-c1">id</span>
+<span class="pl-k">INNER JOIN</span> fire <span class="pl-k">ON</span> <span class="pl-c1">fire</span>.<span class="pl-c1">property_id</span> <span class="pl-k">=</span> <span class="pl-c1">property</span>.<span class="pl-c1">id</span>
+<span class="pl-k">WHERE</span> <span class="pl-c1">fire</span>.<span class="pl-c1">fire_date</span> BETWEEN <span class="pl-c"><span class="pl-c">#</span>1/1/2019# AND #12/31/2019#</span></pre></div>
+<h4>
+<a id="user-content-add-the-result-the-cost-of-the-house-cost-minus-loss-cost" class="anchor" href="#add-the-result-the-cost-of-the-house-cost-minus-loss-cost" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add the result the cost of the house cost minus loss cost</h4>
+<div class="highlight highlight-source-sql"><pre><span class="pl-k">SELECT</span> <span class="pl-c1">owner</span>.<span class="pl-c1">name</span>, <span class="pl-c1">owner</span>.<span class="pl-c1">address</span>, firedate, <span class="pl-c1">taxroll</span>.<span class="pl-c1">loss_cost</span>, <span class="pl-c1">taxroll</span>.<span class="pl-c1">house_cost</span>, <span class="pl-c1">taxroll</span>.<span class="pl-c1">house_cost</span> <span class="pl-k">-</span> <span class="pl-c1">taxroll</span>.<span class="pl-c1">loss_cost</span> <span class="pl-k">AS</span> value
+<span class="pl-k">FROM</span> owner
+<span class="pl-k">INNER JOIN</span> property <span class="pl-k">ON</span> <span class="pl-c1">property</span>.<span class="pl-c1">owner_id</span> <span class="pl-k">=</span> <span class="pl-c1">owner</span>.<span class="pl-c1">id</span>
+<span class="pl-k">INNER JOIN</span> fire <span class="pl-k">on</span> <span class="pl-c1">fire</span>.<span class="pl-c1">property_id</span> <span class="pl-k">=</span> <span class="pl-c1">property</span>.<span class="pl-c1">id</span>
+<span class="pl-k">LEFT JOIN</span> taxroll <span class="pl-k">on</span> <span class="pl-c1">taxroll</span>.<span class="pl-c1">property_id</span> <span class="pl-k">=</span> <span class="pl-c1">property</span>.<span class="pl-c1">id</span>
+<span class="pl-k">WHERE</span> <span class="pl-c1">fire</span>.<span class="pl-c1">fire_date</span> BETWEEN <span class="pl-c"><span class="pl-c">#</span>1/1//2019# AND #12/12/2019#</span></pre></div>
+<ol start="4">
+<li><strong>Whats defined in a model</strong></li>
+</ol>
+<p>Rails is a framework based on the MVC pattern. That is, an architecture style where the domain or business logic is separated from the presentation logic. MVC stands for model - view - controller. In simple terms the Model is representative of the ruby object that interacts with the database. Where the View is usually embedded ruby code that does the work of presenation and the Controller receives the requests and routes calls from/to models and views.</p>
+<p>In rails the models are classes that sometimes inherit from ActiveRecord, which then puts in place a lot of Rails' conventions. Like a one-to-one object model instance to database row. Active Record models by convention map to database tables by the pluralized name. So, a User model automatically maps to a database table users. Most importantly though, a rails Model defines the blueprint of a THING that the web application is working with. It defines the THING's relationships to other THINGS, it tells rails how to manage instances and validations and callbacks, it defines its attributes, methods, behaviors, states of being.</p>
+<ol start="5">
+<li><strong>What’s a rails migration</strong></li>
+</ol>
+<p>a rails migration is a class that inherits from ActiveRecord::Migration. It is a rails construct used to add, remove, and change database tables, their attributes, and attribute types.</p>
+<p>Migrations are a feature of Active Record that allows for adding, manipulating, and removing from the databse schema over time. rather than write schema modifications in SQL, migrations allow you to use an easy Ruby DSL to describe changes to tables. Thereby allowing you to be database independent. The main purpose of Rails' migration feature is to issue commands that modify the schema using a consistent process.</p>
+<ol start="6">
+<li><strong>How do you stop a cross site reference hack</strong></li>
+</ol>
+<p>This attack method works by including malicious code or a link in a page that accesses a web application that the user is believed to have authenticated. If the session for that web application has not timed out, an attacker may execute unauthorized commands.</p>
+<p>In the session chapter you have learned that most Rails applications use cookie-based sessions. Either they store the session ID in the cookie and have a server-side session hash, or the entire session hash is on the client-side. In either case the browser will automatically send along the cookie on every request to a domain, if it can find a cookie for that domain. The controversial point is that if the request comes from a site of a different domain, it will also send the cookie. Let's start with an example:</p>
+<pre><code>Bob browses a message board and views a post from a hacker where there is a crafted HTML image element. The element references a command in Bob's project management application, rather than an image file: &lt;img src="http://www.webapp.com/project/1/destroy"&gt;
+Bob's session at www.webapp.com is still alive, because he didn't log out a few minutes ago.
+
+By viewing the post, the browser finds an image tag. It tries to load the suspected image from www.webapp.com. As explained before, it will also send along the cookie with the valid session ID.
+The web application at www.webapp.com verifies the user information in the corresponding session hash and destroys the project with the ID 1. It then returns a result page which is an unexpected result for the browser, so it will not display the image.
+
+Bob doesn't notice the attack - but a few days later he finds out that project number one is gone.
+</code></pre>
+<p>It is important to notice that the actual crafted image or link doesn't necessarily have to be situated in the web application's domain, it can be anywhere - in a forum, blog post, or email.</p>
+<p><strong>The Fix</strong></p>
+<p>First, as is required by the W3C, use GET and POST appropriately. Secondly, a security token in non-GET requests will protect your application from CSRF.</p>
+<p>The HTTP protocol basically provides two main types of requests - GET and POST (DELETE, PUT, and PATCH should be used like POST). The World Wide Web Consortium (W3C) provides a checklist for choosing HTTP GET or POST:</p>
+<p>Use GET if:</p>
+<pre><code>The interaction is more like a question (i.e., it is a safe operation such as a query, read operation, or lookup).
+</code></pre>
+<p>Use POST if:</p>
+<pre><code>The interaction is more like an order, or
+The interaction changes the state of the resource in a way that the user would perceive (e.g., a subscription to a service), or
+The user is held accountable for the results of the interaction.
+</code></pre>
+<p>If your web application is RESTful, you might be used to additional HTTP verbs, such as PATCH, PUT, or DELETE. Some legacy web browsers, however, do not support them - only GET and POST. Rails uses a hidden _method field to handle these cases.</p>
+<p>POST requests can be sent automatically, too. In this example, the link <a href="http://www.harmless.com" rel="nofollow">www.harmless.com</a> is shown as the destination in the browser's status bar. But it has actually dynamically created a new form that sends a POST request.</p>
+<div class="highlight highlight-source-ruby"><pre>&lt;<span class="pl-en">a</span> <span class="pl-s1">href</span><span class="pl-c1">=</span><span class="pl-s">"http://www.harmless.com/"</span> <span class="pl-s1">onclick</span><span class="pl-c1">=</span><span class="pl-s">"</span>
+<span class="pl-s">  var f = document.createElement('form');</span>
+<span class="pl-s">  f.style.display = 'none';</span>
+<span class="pl-s">  this.parentNode.appendChild(f);</span>
+<span class="pl-s">  f.method = 'POST';</span>
+<span class="pl-s">  f.action = 'http://www.example.com/account/destroy';</span>
+<span class="pl-s">  f.submit();</span>
+<span class="pl-s">  return false;"</span>&gt;<span class="pl-v">To</span> <span class="pl-en">the</span> <span class="pl-en">harmless</span> <span class="pl-en">survey</span>&lt;/<span class="pl-en">a</span>&gt;<span class="pl-en"></span></pre></div>
+<p>To protect against all other forged requests, we introduce a required security token that our site knows but other sites don't know. We include the security token in requests and verify it on the server. This is a one-liner in your application controller, and is the default for newly created Rails applications:</p>
+<pre><code>protect_from_forgery with: :exception
+</code></pre>
+<p>TLDR:
+CSRF : SOP policy will protect attacker from seeing response, but CSRF token will protect our application from the POST request as it will not have the secret token.
+XSS : be very weary of using html_safe and raw format and always always be weary of content that is user generated.
+SQL INJECT : be weary of user input, make sure to sanitize everything, the Model.find and Model.find_by_name methods will sanitize by escaping ' , " , NULL character, and line breaks. Also it's safest to pass arguments in the array style or hash style.</p>
+<ol start="7">
+<li><strong>Whats wrong with the code where you have a select statement in the view</strong></li>
+<li><strong>How do you protect yourself from sql inject</strong></li>
+</ol>
+<p>SQL injection attacks aim at influencing database queries by manipulating web application parameters.</p>
+<p>Here is an example of how not to use user input data in a query:
+Project.where("name = '#{params[:name]}'")</p>
+<p>This could be in a search action and the user may enter a project's name that they want to find. If a malicious user enters ' OR 1 --, the resulting SQL query will be:</p>
+<pre><code>SELECT * FROM projects WHERE name = '' OR 1 --'
+</code></pre>
+<p>Ruby on Rails has a built-in filter for special SQL characters, which will escape ' , " , NULL character, and line breaks. Using Model.find(id) or Model.find_by_some thing(something) automatically applies this countermeasure. But in SQL fragments, especially in conditions fragments (where("...")), the connection.execute() or Model.find_by_sql() methods, it has to be applied manually.</p>
+<p>Instead of passing a string to the conditions option, you can pass an array to sanitize tainted strings like this:</p>
+<pre><code>Model.where("login = ? AND password = ?", entered_user_name, entered_password).first
+</code></pre>
+<p>As you can see, the first part of the array is an SQL fragment with question marks. The sanitized versions of the variables in the second part of the array replace the question marks. Or you can pass a hash for the same result:</p>
+<pre><code>Model.where(login: entered_user_name, password: entered_password).first
+</code></pre>
+<p>The array or hash form is only available in model instances. You can try sanitize_sql() elsewhere. Make it a habit to think about the security consequences when using an external string in SQL.</p>
+<ol start="9">
+<li><strong>Data analytics: draw schema for something</strong></li>
+</ol>
+<p>In most relational databases (especially for transactional systems), tables are normalized and it is necessary to join various tables together in different ways to see the full picture. This saves on space because the normalization, if done well, allows you to greatly reduce the storage of duplicated data (feel free to Google the details). For analytical reporting, these joins can impact the performance when retrieving the data for human consumption. Many data warehouses will take the hit on storage to save on output performance by adopting a star schema.</p>
+<p>In a star schema, there is one central ‘fact’ table and several ‘dimension’ tables with specific attributes of that fact. Star schemas are denormalized (compared to the operational databases that often feed into them). Each dimension has exactly one join and that join ties it to the fact table.</p>
+<p><a href="https://camo.githubusercontent.com/3c810205c27bc56b5cf21ee45ac17c3fbdb626ae/68747470733a2f2f7170682e66732e71756f726163646e2e6e65742f6d61696e2d71696d672d3436653230623336653465313663356239336364613035393436393634663737" target="_blank" rel="nofollow"><img src="https://camo.githubusercontent.com/3c810205c27bc56b5cf21ee45ac17c3fbdb626ae/68747470733a2f2f7170682e66732e71756f726163646e2e6e65742f6d61696e2d71696d672d3436653230623336653465313663356239336364613035393436393634663737" alt="Physician Order Facts Star Schema" data-canonical-src="https://qph.fs.quoracdn.net/main-qimg-46e20b36e4e16c5b93cda05946964f77" style="max-width:100%;"></a></p>
+<p>In a snowflake schema, on the other hand, some or all of the dimensions are partially normalized. The most important data still resides in the parent dimension tables, but additional details that you may not want or need in every report are pushed out into child tables. The performance can suffer for larger reports that require all details stored in the parent dimensions and their children, but the snowflake can be easier on memory and will likely also reduce storage requirements.</p>
+<p><a href="https://camo.githubusercontent.com/5cf327b4203f28ce807598ee6fa4d6dc045c50cf/68747470733a2f2f7170682e66732e71756f726163646e2e6e65742f6d61696e2d71696d672d3865333334373737336161386434376335316364396336636562353464356661" target="_blank" rel="nofollow"><img src="https://camo.githubusercontent.com/5cf327b4203f28ce807598ee6fa4d6dc045c50cf/68747470733a2f2f7170682e66732e71756f726163646e2e6e65742f6d61696e2d71696d672d3865333334373737336161386434376335316364396336636562353464356661" alt="Physician Order Facts Snowflake Schema" data-canonical-src="https://qph.fs.quoracdn.net/main-qimg-8e3347773aa8d47c51cd9c6ceb54d5fa" style="max-width:100%;"></a></p>
+<ol start="10">
+<li><strong>Regular expression [\A[\W.+]+@+.[\w]+.\z]</strong></li>
+</ol>
+<p>It's possible to write a regular expression that only accept email addresses that follow the standards. However, there are some email addresses out there that doesn't strictly follow the standards, but still work.</p>
+<p>Here are some simple regular expressions for basic validation:</p>
+<p>Contains a @ character:</p>
+<pre><code>@
+</code></pre>
+<p>Contains @ and a period somewhere after it:</p>
+<pre><code>@.*?\.
+</code></pre>
+<p>Has at least one character before the @, before the period and after it:</p>
+<pre><code>.+@.+\..+
+</code></pre>
+<p>Has only one @, at least one character before the @, before the period and after it:</p>
+<pre><code>^[^@]+@[^@]+\.[^@]+$
+</code></pre>
+<p>User AmoebaMan17 suggests this modification to eliminate whitespace:</p>
+<pre><code>^[^@\s]+@[^@\s]+\.[^@\s]+$
+</code></pre>
+<p>And for accepting only one period:</p>
+<pre><code>^[^@\s]+@[^@\s\.]+\.[^@\.\s]+$
+</code></pre>
+<p><strong>Regular Expression in rails</strong></p>
+<p>To fix the regular expression, \A and \z should be used instead of ^ and $, like so:</p>
+<pre><code>/\Ahttps?:\/\/[^\n]+\z/i
+</code></pre>
+<p>Since this is a frequent mistake, the format validator (validates_format_of) now raises an exception if the provided regular expression starts with ^ or ends with $. If you do need to use ^ and $ instead of \A and \z (which is rare), you can set the :multiline option to true, like so:</p>
+<pre><code># content should include a line "Meanwhile" anywhere in the string
+validates :content, format: { with: /^Meanwhile$/, multiline: true }
+</code></pre>
+<p>Note that this only protects you against the most common mistake when using the format validator - you always need to keep in mind that ^ and $ match the line beginning and line end in Ruby, and not the beginning and end of a string.</p>
+</article></body></html>

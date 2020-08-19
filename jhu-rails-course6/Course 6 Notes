@@ -1,5 +1,3 @@
-Course 6 Notes
-
 Sanity Check on Dev Environment - Checked out the course example and following the following build steps.
 
 - I'm using rails 4.2.8, but example gemfile uses 4.2.6
@@ -10,49 +8,50 @@ Sanity Check on Dev Environment - Checked out the course example and following t
 
 
 Assignment 1 steps
-
-- git init-iated a new directory and added a readme
--  rails-api new . -T -d postgresql - dash T is so that it skips testing templates and dash d to declare the db
-- updates to database.yml file, using environment variables to auth into db
-- run rake db:create, rake db:migrate, go through manifest fix, add to gemfile
-- rails g rspec:install
-- rails g rspec:request APIDevelopment
-- Our Requirements so far: create a RDBMS-backed model, expose RDBMBS-backed API resource, create a MongoDB-backed model, expose MongoDB-backed API resource
-- rails-api g scaffold City name --orm active_record --no-request-specs --no-routing-specs --no-controller-specs
-- rails-api g scaffold State name --orm mongoid --no-request-specs --no-routing-specs --no-controller-specs
-- Provision MongoDB 
-- Provision Heroku servers
-- deploy to heroku - I ran into an issue where deploying to heroku tries to precompile assets and there were assets gems not in the gemfile. I added the gems, bundled, and GIT COMMIT them, the push again and it worked.
-- set the MONGO_URI to mongodb+srv://admin:<password>@clustercapstone-zl3dy.mongodb.net/test?retryWrites=true&w=majority
-- mongodb atlas wants whitelisted IP addresses, so for heroku i used 0.0.0.0/0
-- in config/environments/production.rb set config.force_ssl = true
--once i've fully deployed to staging, ill switch over to master 'git checkout master', and 'git merge staging-app' changes into master
+Technical Architecture 
+  - git init-iated a new directory and added a readme
+  -  rails-api new . -T -d postgresql - dash T is so that it skips testing templates and dash d to declare the db
+  - updates to database.yml file, using environment variables to auth into db
+  - run rake db:create, rake db:migrate, go through manifest fix, add to gemfile
+  - rails g rspec:install
+  - rails g rspec:request APIDevelopment
+  - Our Requirements so far: create a RDBMS-backed model, expose RDBMBS-backed API resource, create a MongoDB-backed model, expose MongoDB-backed API resource
+  - rails-api g scaffold City name --orm active_record --no-request-specs --no-routing-specs --no-controller-specs
+  - rails-api g scaffold State name --orm mongoid --no-request-specs --no-routing-specs --no-controller-specs
+  - Provision MongoDB 
+  - Provision Heroku servers
+  - deploy to heroku - I ran into an issue where deploying to heroku tries to precompile assets and there were assets gems not in the gemfile. I added the gems, bundled, and GIT COMMIT them, the push again and it worked.
+  - set the MONGO_URI to mongodb+srv://admin:<password>@clustercapstone-zl3dy.mongodb.net/test?retryWrites=true&w=majority
+  - mongodb atlas wants whitelisted IP addresses, so for heroku i used 0.0.0.0/0
+  - in config/environments/production.rb set config.force_ssl = true
+  -once i've fully deployed to staging, ill switch over to master 'git checkout master', and 'git merge staging-app' changes into master
 
 Assignment 2 steps
+Asset Pipeline
 
-- In preparing for production we make sure that assets ( js and css) are going to be compressed, production.rb file is updated to use uglifier and sass
-- We'll need to add gems, asset directories and manifests, create assets initializer file, make server updates for precompiles, html page updates
-- To properly have assets precompiled, run RAILS_ENV=production rake assets:precompile. Heroku assumes we precompile files to the /public directory, but if you don't specify the ENV, then uglifier doesn't uglify and it does development level precompiling and pushes that to heroku's public directory. How do I tell Heroku to precompile before deployment instead of precompiling locally and pushing those files.
-(Web client development outside of rails asset pipeline uses node package manager, bower, and gulp tasks.)
-- I created a git branch to go through install and init of npm, bower, and gulp tasks.
-- Gulp Build Tasks - A build is made up of the most up to date source files, so the build tasks are mostly moving, sourcemapping, and grouping assets from different directories to one place that will serve up the latest build.
-- Gulp branch was deployed to github pages, then we made edits to client to be able to be reployed from within the rails app on heroku and deployed that. once we had all 3 versions working, we merged the branches first into a temporary branch ap-external, and then into master.
-- ui-router is tied to the <div ui-view></div>, so when we include it in our module, we define ui-router states and it is then displayed by the asset pipeline. we also have to register these javascript files in the manifest file.
-- added our new module to access the cities resource, added file to manifest, and added API server location to app.config.js
-(what the difference between Factory, Service, Provider? in the context of building a resource service to communicate with the RAILS API)
-(Our factory returns a $resource that represents the collection of cities, instances of $resources represnts individual cities, $resouce is a part of ngResource )
-(Angular Controller: Provides data and callbacks to the PAGE, accessible through the assigned 'controllerAs' - It primarily integrates the view with services, the services should contain any detailed code and controllers are integration code - new instances are created for each page creation, the injected services are singleton "helpers")
-(whats the difference between Directive and Component?)
-- added City service, controller, directive
-- added a layout.css to start my styling
-- filled out the city controller to perform CRUD operations
-- deployed all 3 environments
-- made CORS configurations
-- branched out to assignment-2, removed all traces of other environments and am sticking to using the asset-pipeline, deployed to heroku and pushed branch to github.
+  - In preparing for production we make sure that assets ( js and css) are going to be compressed, production.rb file is updated to use uglifier and sass
+  - We'll need to add gems, asset directories and manifests, create assets initializer file, make server updates for precompiles, html page updates
+  - To properly have assets precompiled, run RAILS_ENV=production rake assets:precompile. Heroku assumes we precompile files to the /public directory, but if you don't specify the ENV, then uglifier doesn't uglify and it does development level precompiling and pushes that to heroku's public directory. How do I tell Heroku to precompile before deployment instead of precompiling locally and pushing those files.
+  (Web client development outside of rails asset pipeline uses node package manager, bower, and gulp tasks.)
+  - I created a git branch to go through install and init of npm, bower, and gulp tasks.
+  - Gulp Build Tasks - A build is made up of the most up to date source files, so the build tasks are mostly moving, sourcemapping, and grouping assets from different directories to one place that will serve up the latest build.
+  - Gulp branch was deployed to github pages, then we made edits to client to be able to be reployed from within the rails app on heroku and deployed that. once we had all 3 versions working, we merged the branches first into a temporary branch ap-external, and then into master.
+  - ui-router is tied to the <div ui-view></div>, so when we include it in our module, we define ui-router states and it is then displayed by the asset pipeline. we also have to register these javascript files in the manifest file.
+  - added our new module to access the cities resource, added file to manifest, and added API server location to app.config.js
+  (what the difference between Factory, Service, Provider? in the context of building a resource service to communicate with the RAILS API)
+  (Our factory returns a $resource that represents the collection of cities, instances of $resources represnts individual cities, $resouce is a part of ngResource )
+  (Angular Controller: Provides data and callbacks to the PAGE, accessible through the assigned 'controllerAs' - It primarily integrates the view with services, the services should contain any detailed code and controllers are integration code - new instances are created for each page creation, the injected services are singleton "helpers")
+  (whats the difference between Directive and Component?)
+  - added City service, controller, directive
+  - added a layout.css to start my styling
+  - filled out the city controller to perform CRUD operations
+  - deployed all 3 environments
+  - made CORS configurations
+  - branched out to assignment-2, removed all traces of other environments and am sticking to using the asset-pipeline, deployed to heroku and pushed branch to github.
 
 Assignment 3
-
 Testing
+
 Gems / Tools
  Rspec - a domain specific for testing - use the shared context and shared examples. Use Ruby Modules,to build helper methods around some complex application interactions,like login and logout, so that we don't want to repeat everywhere. 
  Database Cleaner - to give us some transactional and truncation  db clean up strategies, to get db in a known state.
@@ -79,13 +78,12 @@ Rspec tests
 	 - before(:each)/after(:each) blocks run before/after every example
 	 - using '@attributes' allow for sharing/access between blocks
 	 - 'let' blocks can replace the before blocks by instantiating their block whenever called, 'lazy instantiation'
-   - The Capybara Gem is required to build feature specs. The two are hand in hand. The RackTest driver is the default web driver
-      that Capybara is willing to use out of the box. This is the same driver that we did our API testing. And is also suitable for doing testing of static web pages. However, if you're going to render HTML using Javascript. You must bring in an additional driver that has support for Javascript. In order to do that, we must add metadata to the spec that indicates it must use a JavaScript capable driver. And the default JavaScript driver for Capybara is the Selenium-webdriver. 
+   - The Capybara Gem is required to build feature specs. The two are hand in hand. The RackTest driver is the default web driver that Capybara is willing to use out of the box. This is the same driver that we did our API testing. And is also suitable for doing testing of static web pages. However, if you're going to render HTML using Javascript. You must bring in an additional driver that has support for Javascript. In order to do that, we must add metadata to the spec that indicates it must use a JavaScript capable driver. And the default JavaScript driver for Capybara is the Selenium-webdriver. 
 
 	Drafting Tests
 	 - Listing requirements only => don't add a block
 	 - Expecting failures => use a pending block
-	 - Bypasing tests => add an 'x' to the beginning of the line
+	 - Bypasing tests => add an 'x' to the beginning of the line 'it' block
 
    Capybara built-in waits (default wait = 2 secs)
    - find
@@ -103,9 +101,12 @@ Rspec tests
   Steps
   - Made some configurations in prep for rspec testing. spec_helper including MongoidMatchers. config/env/test turned on/off the STDOUT logger. config/application reset the default specs generated by rails g. using mongoid-rspec gem for mongoid matchers. drafted first set of examples for active_record and mongoid resources.
   - we are using DatabaseCleaner to have better control of setting our testing environment, examples/tests will not be using transactions by default so we turn that setting off,adding gem, create a dbcleaners support file, and add the contexts to our spec files, make sure to include dependencies to spec_helper.rb
-  .
-  .
-  .
+  - Using FactoryGirl and Faker for helping with test data
+  - first set of request tests, also started api_helper module and am properly replying when record_not_found in application_controller
+  - request/API specs for city and state resources, using shared examples, and some metaprogramming, rescuing from 404s and making sure that json requests get properly formatted
+  - feature/ui testing using Capybara&SeleniumWebDriver for in-browser testing and Capybara&Poltergeist-PhantomJS for headless testing.
+
+
   -started assignment off by cloning their repo, then making sure dev environment is working first by trying bundle install. Assignment repo uses json 1.8.3, which doesn't work with Ruby 2.4 and later, but ruby 2.3.8 is EOL, it requires openssl 1.0, homebrew removed the formula and only provides openssl1.1, the workaround is as follows:
     >brew install rbenv/tap/openssl@1.0
     >RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.0)" rbenv install 2.3.8
@@ -118,16 +119,203 @@ Rspec tests
     > gem install sqlite3 -v '1.3.12' -- --with-sqlite3-dir=/opt/local
     > bundle install
     > rake db:migrate
-    
-ExecJS::ProgramError: Unexpected token punc «(», expected punc «:» when running rake assets:precompile on production
 
->> require "Uglifier"
->>JS_PATH = "app/assets/javascripts/**/*.js"; Dir[JS_PATH].each do |file_name|  puts "\n#{file_name}" ; puts Uglifier.compile(File.read(file_name), harmony: true) end
-
-
-
+  -edited the resource factory by adding a new default that did a n%10 to generate names of name1,name2,etc
+  - rails g rspec:request error_api_spec a new spec file, that had a simple test that makes a POST request with bad parameters
+  - application controller gets a new rescue_from that catches the bad parameters request and returns the appropriate response in json
+  - added a new test to the feature tests, it goes to the main page, finds the form, looks for a button and checks to see if it has an attribute of disabled. 
+  - also went to the html page with the form, gave the form a name and added to the button an attribute of ng-disabled=formName.$invalid which would disabled the button as long as the form was invalid.
 
 
+Assignment 4 / Module 4
+Authentication & Authorization
+
+Authentication Requirements
+  - We need to be able to sign-up. 
+  - We need to be able to log in and access our resource.login == need to initiate the token. 
+  - We need to be able to maintain our anonymous access to unprotected resources. 
+  - we need to understand the error reporting that comes back from the server so that when the UI is speaking to our backend, that we understand all the error payloads and how to convey that to the user.
+
+
+Steps
+ - Install devise
+ - api_request_spec file to list requirements
+ - api_request_spec is built and DRYed up into the api_helper file
+ - rails-api g scaffold Image caption creator_id:integer:index --orm active_record
+    migration > :creator_id, {null:false}
+    edit images factory
+    fill out model specs
+    make necessary changes to routes so new resource is under /api/
+    make changes to controller, wrap parameters, assign creator_id at creation, reformat error returns, creator_id isn't a white listed params, authenticate user
+ -  Thing: Scaffold, make name mandatory, thing factory with name, notes and description, model spec, URI to thing, things controller with one mandatory field, things requests spec, use the shared examples from earlier foos that generalized api testing, and auth policy testing. crate thing without auth? get as an anonymous? passing in bad data like missing name, the spec should want back a bad request
+ - ThingImage, rails g model ThingImage with references to image and thing, edits to the model, added some custom query scopes, and basic model specs to test relationships
+ - rails-api g resource ThingImage index create update destroy --skip, routing, controller, json.jbuilder view
+ - ThingImage request specs, api_helper create_resource helper, database migration consolidating
+ - authn module on client side. ng-token-auth, spec for signup, displaying signup page, client and server talking about signup
+ - client side auth ui complete
+ - spec edits to compensate for angularjs routing
+ - adding rakefile to seed database with users + business objects
+ - adding images page with authorization controls
+ - things page and resource with authorization controls
+ - things/images pages updated to include ThingImage resource and controls
+ - 
+
+ - getCurrentUserId in Authn service
+ - Authz Module
+  - Authz Service - will be .service (vs .factory) because there will only be one instance of this overall functionality
+    - we'll inject the $rootScope, $q, Authn, and whoAmI. rootScope will be used for all the watch statements, $q will be used for building deferred statements back, Authn service is what this service will be watching and calling, and whoAmI is how we are going to get the applicatin level roles for a particular user.
+    - Listens for Authn state changes, Obtains current user applicatino-level roles, Provides authorized user to callers, Provides role-evaluation helper methods
+
+
+Errors:   
+  ExecJS::ProgramError: Unexpected token punc «(», expected punc «:» when running rake assets:precompile on production
+
+  >> require "Uglifier"
+  >>JS_PATH = "app/assets/javascripts/**/*.js"; Dir[JS_PATH].each do |file_name|  puts "\n#{file_name}" ; puts Uglifier.compile(File.read(file_name)) end
+
+$q.all( ).catch(handleError) - Module 4 - Photo Tourist Domain Resources and Client Access Control - Video: UI: Displaying Thing/Image Links
+
+  - To actually listen for the results, $q service, with it you can collect up into an array all the promises that you've been given. and the .all method will wait for all of them to complete and then call whatever you're handing off on that. 
+  - first, we call Thing.get and ThingImage.query, and that's assigned to a stand-in object. A proxy that will become the object when it gets filled in. But if we want the actual promise - so that we can know the results of it, then we have to de-reference .$promise 
+  - when we use .save and .update. and .delete, they don't return a proxy, the instance is the proxy.
+  - so we want to register an additional listener, to the completion of the images promised. And waht I'd like this callback function to do is that when the collection is resolved, iterate through each member of the collction and make a copy of the priority, so that we can track what was there when we reloaded and what's is on the page currently.
+
+          function reload(thingId) {
+        var itemId = thingId ? thingId : vm.item.id;      
+        console.log("re/loading thing", itemId);
+        vm.images = ThingImage.query({thing_id:itemId});
+        vm.item = Thing.get({id:itemId});
+        vm.thingsAuthz.newItem(vm.item);
+        vm.images.$promise.then(
+          function(){
+            angular.forEach(vm.images, function(ti){
+              ti.originalPriority = ti.priority;            
+            });                     
+          });
+        $q.all([vm.item.$promise,vm.images.$promise]).catch(handleError);
+      }
+
+
+Module 5
+Image Content
+  Image Content Data Model
+    - In discussing image content management, two stock approaches are using Paperclip or CarrierWave. Both are full featured and integrate with ImageMagick, but they require file storage and are not easily customized, and so when we go to deploy to heroku we would need to find a cloud storage provider because Heroku doesn't provide that. Heroku isn't writable, and what is writable isn't persistent.
+    - We're storing our metadata in a relational database, but then we're going to store the content for that image in Mongo. We're going to leverage the BSON Binary type and just go ahead and avoid the complexities of GridFS. Mongo has a 16mb limit of any Mongo document. we would have a reason to bring GridFS into the picuture if we had the risk of having our images above 16mb.
+    - We're goign to use ImageMagick 6 for image editing, which is provided out of the box on heroku. And to talk to ImageMagick, there is RMagick and there's MiniMagick. RMagick is a library interface that has all the bells and whistles, where as MiniMagick is more of a command line wrapper.
+
+  Steps
+    $ rails-api g model ImageContent image_id:integer width:integer height:integer content_type content:binary original:boolean --orm mongoid
+
+    - Edits to Model to include class methods
+    - Filling out Specs
+    - Add Exif reader gem
+    - Edits to model to make use of exif 
+    - Custom Validation for ImageContent to validate content_type using height/width
+    - Edits to Image factory that deals with defining attributes for image_content and then after(:build) actually building the ImageContent and adding it to the image
+    - using attr_accessor :image_content on Image, creates a transient property on Image. That works because its not something being sotred in the relationsal database, not really something being handled by activerecord
+    - adding minimagick gem and ImageMagick install
+    - implementing service class ImageContentCreator
+    - rake db:mongoid:create_indexes
+
+
+Etag, cache-control, headers are used for caching
+
+ng-file-upload used for uploading image files
+
+adding a new component under layout - image_loader
+
+
+Assignment 5
+1. (15 min) Augment the User model to store an optional image_id for an image that represents the User.
+  - Looks like the user model already had a field named image. I'll just go ahead and change that field to be a reference to the Image model. 
+  - I'll also declare it to belongs_to image. I dont think it needs to be bidirectional, at least not yet. It might even be better to just use attr_accessor :image_id, instead, but we'll see
+
+2. (30 min) Augment the Images API to accept optional user identity information with new Image content to have
+the Image associated with a User. Assume only new Images are being assigned and there is no edit/replacement
+capability as a part of the mandatory part of the assignment.
+  - I'm creating a new route, when we're on the registration page, we POST to the devise controller to create the new User, but this new route will also POST to the Image Controller
+    to create a new Image. This new Image will store the new user.id in the creator_id field and will also create a new ImageContent based on what the user passes in.
+
+3. (30 min) Augment the Images API to separate User Images from standard Images uploaded to the server. That
+means the images#index should not return Images added to represent Users.
+  - instead of calling policy_scope on Images.all, we could probably call it on Image.joins('LEFT OUTER JOIN users ON users.image_id = images.id').where('users.image_id IS NULL') which would return 
+    all Images that do not use a user association.
+
+4. (30 min) Augment either the Devise User information or the whoAmI response to include an optional URL for
+the User image.
+  - here I just need to edit the whoamI.json view to include a url built from the user's user_id and the image_content_url
+
+5. (15 min) Display a thumbnail image of the current user on either the Logout drop-down on the Navbar or the
+Logout form available from the drop-down – if the User supplied an image. It will be helpful if you can load an
+image for a few or all of the account holders inserted by the ptourist Rakefile.
+  - optionally I can edit the rakefile so that when users are created, we also create an image that will be the user_image
+  - edit the navbar so also display the image that's associated with the user, i can use the url that's returned from the whoami call
+
+6. (60 min) Augment the Account Registration page such that the user may optionally provide a JPEG image that
+represents them as a User. Provide the ability for the user to manually determine what is included in a 3:2
+(width:height) aspect ratio. This process should produce a 1200:800 pixel image.
+  - edit the signup form, we'll somehow incorporate the image-loader 
+
+7. (30 min) Augment the sign-up process to create a new Image with the contents the user provided. This will likely
+consist of two separate calls to the server: the standard sign-up call the page is already performing plus an
+additional call to create a new Image using the credential of the created account.
+  - when create_user button is pushed we issue the post request to the devise controller, and when that comes back with user info, then we issue another post request, this time to the images controller,
+    create the user_image, assign current_user to @image.user
+
+When deploying to heroku if you see a big wall of text and build fails, like so:
+
+Argument list too long -  logger -p user.notice -t "slugc[$$]" "buildpack-ruby compile id=ec7a05cf406 framework=rails42 status=error finish=1589086517.57 elapsed=46.85 message=Argument\ list\ too\ long\ -\ \ logger\ -p\ user.notice\ -t\ \"slugc\[\$\$\]\"\ \"buildpack-ruby\ assets_precompile\ id\=ec7a05cf406\ framework\=rails42\ status\=error\ finish\=1589086517.45\ elapsed\=1.70\ message\=Could\\\ not\\\ detect\\\ rake\\\ tasks\''
+
+ !     '\'ensure\\\ you\\\ can\\\ run\\\ \\\`\\\$\\\ bundle\\\ exec\\\ rake\\\ -P\\\`\\\ against\\\ your\\\ app\''
+
+Check the ruby version, it's likely goin to be the care that there's some version/dependcy conflict. In this case Heroku by default was using ruby 2.5.7 so I had to specify in the Gemfile 2.3.8.
 
 
 
+mongodb://admin:<password>@clusterstaging-shard-00-00-jdtdk.mongodb.net:27017,clusterstaging-shard-00-01-jdtdk.mongodb.net:27017,clusterstaging-shard-00-02-jdtdk.mongodb.net:27017/test?ssl=true&replicaSet=ClusterStaging-shard-0&authSource=admin&retryWrites=true&w=majority
+
+I couldn't get Mongoid to play nice, so i turned it off in respect to database_cleaners
+
+
+Module 6
+
+Location Value Objects
+Location:
+  - formatted_address
+  - position : Point value object
+    - Point: lng, lat
+  - address: PostalAddress value object
+    - PostalAddress: street_address, city, state_code, zip, country_code
+
+  {:formatted_address=> "3400 N Charles St, Baltimore, MD 21218, USA",
+   :position=> {:lng=> -76.234234, :lat=> 39.234234},
+   :address=> {:street_address=>"3400 North Charles Street", :city=>"Baltimore", :state_code=>"MD", :zip=>"21218", :country_code=>"US"}
+  }
+
+  Image model will store two new fields "lng" and "lat" which represent the position. 
+
+
+  Having trouble with Mongo again. So if I try to use the rakefile on heroku by saying rake 'ptourist_reset_all' it errors out and says Mongo::Error::OperationFailure: can't get regex from filter doc Error parsing value [{$not {system\.|\$ m}}] to RegEx: Must specify $regex field (8000)
+
+  I think that has something to do with Database Cleaner. I disabled the database_cleaner safeguards as environment variables and updated mongo gem to version 2.10, and now the rake file works.
+
+  rake db:mongoid:create_indexes also wasn't working, turns out that we defined the CachedLocation indexes incorrectly. We can't have a compund index (index with multiple fields) that has an expiration. It's either a TTL (time to live) index which has to be a single field index, or a compund field index
+
+  Assignment
+  1. create two scopes, one to return the specified images and another to return all images not specified
+  2. I didn't want to edit the current index endpoint so I created a new one that would accept/watch for params for lng,lat,miles, and either included_images or excluded_images
+  3. created a simple service that performs a POST request to the implemented endpoint. I used a POST request because that seemed like the easiest way to send over an array in the request.
+  4. 
+
+  It wasn't until I had already finished the assignment that I realized that I over implemented it. The assignment didn't want me to do all the querying and filtering using the geolocation data, we already did that in the lecture. It simply wanted me to create the query scopes and an endpoint to add the filtering via the scope. The assignment wanted me to create a new section to our application that made use of the geo queries in ThingImages and then once we had that filtered, if we wanted to filter it further we could send the selected array back to make use of our new scopes.
+
+  I think it's really important for me to read through the entire assignment description and then build a complete mental picture of what I'm building. I need to know what functionality and what features I want to have in the end result. I've been building these sometimes with a limited view scope, only building that I think the next person or the next layer will want instead of building with a picture of how the end result will use it.
+
+  Module 7
+  Ui and Transcludes
+
+  adding a require: { tabsController: "^^capTabs" } to the capTab component declaration gives us a reference to the parent controller within the child component
+
+Module 8 / Assignment 8
+
+I'll integrate the API i built in module 4 and then build the UI around that.
